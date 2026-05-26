@@ -11,9 +11,14 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
         w-full
         space-y-5 sm:space-y-7
         text-left
-        bg-[#f4f7fb] dark:bg-[#060816]
+
+        bg-[#dfe6ef]
+        dark:bg-[#030712]
+
         rounded-3xl
         p-3 sm:p-5 md:p-6
+
+        border border-black/10 dark:border-white/5
       "
     >
       {/* ================= HEADER ================= */}
@@ -22,12 +27,11 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
           relative overflow-hidden
           rounded-2xl sm:rounded-3xl
           border border-black/10 dark:border-white/10
-          bg-white/90 dark:bg-[#0d1222]
+          bg-white/70 dark:bg-[#0b1120]
           backdrop-blur-xl
           shadow-lg sm:shadow-2xl
         "
       >
-        {/* Glow */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-cyan-500/10 pointer-events-none" />
 
         <div
@@ -40,7 +44,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
             p-4 sm:p-6 md:p-8
           "
         >
-          {/* LEFT */}
           <div className="min-w-0 w-full">
             <div
               className="
@@ -105,7 +108,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
             </div>
           </div>
 
-          {/* RETURN BUTTON */}
           <button
             onClick={onBack}
             className="
@@ -131,7 +133,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
         </div>
       </div>
 
-      {/* ================= MAIN LAYOUT ================= */}
+      {/* ================= MAIN ================= */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
 
         {/* ================= SIDEBAR ================= */}
@@ -142,7 +144,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
               relative overflow-hidden
               rounded-2xl sm:rounded-3xl
               border border-black/10 dark:border-white/10
-              bg-white/90 dark:bg-[#0d1222]
+              bg-white/70 dark:bg-[#0b1120]
               backdrop-blur-xl
               p-4 sm:p-6
               shadow-lg sm:shadow-2xl
@@ -152,7 +154,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
 
             <div className="relative z-10 space-y-5">
 
-              {/* BADGE */}
               <div>
                 <span
                   className="
@@ -173,7 +174,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                 </span>
               </div>
 
-              {/* DESCRIPTION */}
               <div className="space-y-3">
                 <h4 className="text-black dark:text-white text-lg font-bold">
                   Credentials Overview
@@ -189,14 +189,13 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                 </p>
               </div>
 
-              {/* STATS */}
               <div className="grid grid-cols-2 gap-3 pt-2">
 
                 <div
                   className="
                     rounded-2xl
                     border border-black/10 dark:border-white/10
-                    bg-black/[0.02] dark:bg-white/[0.03]
+                    bg-black/[0.03] dark:bg-white/[0.03]
                     p-4
                   "
                 >
@@ -213,7 +212,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                   className="
                     rounded-2xl
                     border border-black/10 dark:border-white/10
-                    bg-black/[0.02] dark:bg-white/[0.03]
+                    bg-black/[0.03] dark:bg-white/[0.03]
                     p-4
                   "
                 >
@@ -227,7 +226,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                 </div>
               </div>
 
-              {/* FOOTER */}
               <div className="pt-5 border-t border-black/5 dark:border-white/10">
                 <p
                   className="
@@ -248,10 +246,8 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
         {/* ================= CONTENT ================= */}
         <div className="lg:col-span-8 space-y-5">
 
-          {/* COLLECTION */}
           {cert.isCollection ? (
             <>
-              {/* TOP BAR */}
               <div className="flex items-center justify-between gap-3">
                 <h4
                   className="
@@ -270,9 +266,8 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                 </div>
               </div>
 
-              {/* IMPORTANT FIX HERE */}
-              {/* MOBILE = 2 CARDS SIDE BY SIDE */}
-              <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-2 gap-3 sm:gap-5">
+              {/* MOBILE 2 COLUMN */}
+              <div className="grid grid-cols-2 gap-3 sm:gap-5">
 
                 {cert.subDegrees?.map((subDegree, sIdx) => (
                   <motion.div
@@ -283,12 +278,11 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                       group relative overflow-hidden
                       rounded-2xl
                       border border-black/10 dark:border-white/10
-                      bg-white/90 dark:bg-[#0d1222]
+                      bg-white/70 dark:bg-[#0b1120]
                       backdrop-blur-xl
                       shadow-lg
                     "
                   >
-                    {/* Glow */}
                     <div
                       className="
                         absolute inset-0
@@ -300,11 +294,10 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
 
                     <div className="relative z-10 p-3 sm:p-5 space-y-3">
 
-                      {/* TITLE */}
                       <div className="space-y-1">
                         <h5
                           className="
-                            text-xs sm:text-lg
+                            text-[11px] sm:text-lg
                             font-bold
                             text-black dark:text-white
                             leading-tight
@@ -319,7 +312,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                         </p>
                       </div>
 
-                      {/* IMAGE */}
                       {subDegree.links
                         ?.filter(asset => asset.type === "image")
                         .map((asset, index) => {
@@ -331,15 +323,13 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                           return (
                             <div key={index} className="space-y-3">
 
-                              {/* IMAGE */}
                               <div
                                 onClick={() => onPreviewImage(asset.target)}
                                 className="
                                   relative overflow-hidden
                                   rounded-xl sm:rounded-2xl
                                   border border-black/10 dark:border-white/10
-                                  aspect-[1/1]
-                                  sm:aspect-[4/3]
+                                  aspect-square sm:aspect-[4/3]
                                   cursor-zoom-in
                                   bg-black/10 dark:bg-black/20
                                   group/image
@@ -356,7 +346,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                                   "
                                 />
 
-                                {/* OVERLAY */}
                                 <div
                                   className="
                                     absolute inset-0
@@ -383,7 +372,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                                 </div>
                               </div>
 
-                              {/* SOURCE BUTTON */}
                               {sourceLink && (
                                 <a
                                   href={sourceLink.target}
@@ -419,7 +407,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
               </div>
             </>
           ) : (
-            /* SINGLE CERTIFICATE */
             cert.links
               ?.filter(asset => asset.type === "image")
               .map((asset, index) => {
@@ -438,7 +425,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                       group relative overflow-hidden
                       rounded-2xl sm:rounded-3xl
                       border border-black/10 dark:border-white/10
-                      bg-white/90 dark:bg-[#0d1222]
+                      bg-white/70 dark:bg-[#0b1120]
                       backdrop-blur-xl
                       shadow-lg sm:shadow-2xl
                       p-4 sm:p-5
@@ -446,7 +433,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                   >
                     <div className="relative z-10 space-y-4">
 
-                      {/* TITLE */}
                       <div className="flex items-center justify-between gap-3">
                         <h4
                           className="
@@ -475,7 +461,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                         </div>
                       </div>
 
-                      {/* IMAGE */}
                       <div
                         onClick={() => onPreviewImage(asset.target)}
                         className="
@@ -499,7 +484,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                           "
                         />
 
-                        {/* OVERLAY */}
                         <div
                           className="
                             absolute inset-0
@@ -526,7 +510,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                         </div>
                       </div>
 
-                      {/* BUTTON */}
                       {sourceLink && (
                         <a
                           href={sourceLink.target}
