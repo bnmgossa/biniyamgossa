@@ -9,27 +9,29 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
       transition={{ duration: 0.35 }}
       className="
         w-full
-        space-y-5 sm:space-y-7
+        space-y-4 sm:space-y-7
         text-left
 
-        bg-[#dfe6ef]
-        dark:bg-[#030712]
+        /* Light mode: adaptive contrast on phone screens */
+        bg-[#dfe6ef] max-sm:bg-[#cad2dd]
+        /* Dark mode: pure clean black space on phone screens */
+        dark:bg-[#030712] max-sm:dark:bg-[#000000]
 
         rounded-3xl
         p-3 sm:p-5 md:p-6
-
         border border-black/10 dark:border-white/5
+        shadow-sm transition-colors duration-300
       "
     >
-      {/* ================= HEADER ================= */}
+      {/* ================= HEADER PANEL (MOBILE OPTIMIZED COMPACT ROW) ================= */}
       <div
         className="
           relative overflow-hidden
           rounded-2xl sm:rounded-3xl
           border border-black/10 dark:border-white/10
-          bg-white/70 dark:bg-[#0b1120]
+          bg-white/80 dark:bg-[#0b1120]/90
           backdrop-blur-xl
-          shadow-lg sm:shadow-2xl
+          shadow-md sm:shadow-2xl
         "
       >
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-cyan-500/10 pointer-events-none" />
@@ -37,54 +39,58 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
         <div
           className="
             relative z-10
-            flex flex-col md:flex-row
+            /* UI FIX: Side-by-side row layout on mobile instead of stacked boxes */
+            flex flex-row md:flex-row
             justify-between
-            items-start md:items-center
-            gap-5
-            p-4 sm:p-6 md:p-8
+            items-center
+            gap-3
+            p-3.5 sm:p-6 md:p-8
           "
         >
-          <div className="min-w-0 w-full">
+          <div className="min-w-0 flex-1">
             <div
               className="
-                flex items-center gap-2
-                text-[9px] sm:text-[10px]
+                flex items-center gap-1.5
+                text-[8px] sm:text-[10px]
                 font-mono
-                tracking-[0.15em] sm:tracking-[0.25em]
+                tracking-[0.1em] sm:tracking-[0.25em]
                 uppercase
-                text-blue-500
-                mb-2 sm:mb-3
+                text-blue-500 dark:text-blue-400
+                mb-0.5 sm:mb-3
               "
             >
-              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-              VERIFIED_SECURITY_REGISTRY
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
+              <span className="max-sm:hidden">VERIFIED_SECURITY_REGISTRY</span>
+              <span className="sm:hidden">REGISTRY</span>
             </div>
 
             <h3
               className="
-                text-2xl sm:text-3xl md:text-5xl
+                text-lg sm:text-3xl md:text-5xl
                 font-black
                 text-black dark:text-white
                 tracking-tight
-                leading-none
+                leading-tight
                 break-words
+                line-clamp-1
               "
             >
               {cert.name}
             </h3>
 
-            <div className="mt-3 flex flex-wrap items-center gap-2">
+            {/* Badges scale smaller and drop margins on mobile */}
+            <div className="mt-1 sm:mt-3 flex flex-wrap items-center gap-1.5">
               <span
                 className="
-                  px-3 py-1
+                  px-2 py-0.5 sm:px-3 sm:py-1
                   rounded-full
                   bg-blue-500/10
                   border border-blue-500/20
-                  text-[10px] sm:text-xs
-                  font-semibold
+                  text-[8px] sm:text-xs
+                  font-bold
                   tracking-wide
                   uppercase
-                  text-blue-500
+                  text-blue-600 dark:text-blue-400
                 "
               >
                 {cert.sub}
@@ -92,51 +98,57 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
 
               <span
                 className="
+                  max-sm:hidden
                   px-3 py-1
                   rounded-full
                   bg-emerald-500/10
                   border border-emerald-500/20
                   text-[10px] sm:text-xs
-                  font-semibold
+                  font-bold
                   tracking-wide
                   uppercase
-                  text-emerald-500
+                  text-emerald-600 dark:text-emerald-400
                 "
               >
-                Verified Credentials
+                Verified
               </span>
             </div>
           </div>
 
+          {/* UI FIX: Sleek compact square back button for phone headers */}
           <button
             onClick={onBack}
             className="
-              w-full md:w-auto
+              shrink-0
               flex items-center justify-center
-              px-4 py-2.5 sm:px-5 sm:py-3
+              h-9 w-9 sm:h-auto sm:w-auto
+              sm:px-6 sm:py-3
               rounded-xl sm:rounded-2xl
-              border border-red-500/20
+              border border-red-500/30
               bg-red-500/5
-              text-red-500
+              text-red-500 dark:text-red-400
               text-[10px] sm:text-xs
-              font-bold
+              font-black
               uppercase
               tracking-[0.15em]
               transition-all duration-300
               hover:bg-red-500
               hover:text-white
+              hover:shadow-lg hover:shadow-red-500/20
               active:scale-95
             "
+            title="Return"
           >
-            ← Return
+            <span className="sm:hidden text-sm font-bold">←</span>
+            <span className="max-sm:hidden">← Return</span>
           </button>
         </div>
       </div>
 
-      {/* ================= MAIN ================= */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
+      {/* ================= MAIN CONTAINER GRID ================= */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 sm:gap-6">
 
-        {/* ================= SIDEBAR ================= */}
+        {/* ================= SIDEBAR INFO ================= */}
         <div className="lg:col-span-4">
           <div
             className="
@@ -144,7 +156,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
               relative overflow-hidden
               rounded-2xl sm:rounded-3xl
               border border-black/10 dark:border-white/10
-              bg-white/70 dark:bg-[#0b1120]
+              bg-white/80 dark:bg-[#0b1120]/90
               backdrop-blur-xl
               p-4 sm:p-6
               shadow-lg sm:shadow-2xl
@@ -152,8 +164,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
           >
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 via-transparent to-transparent pointer-events-none" />
 
-            <div className="relative z-10 space-y-5">
-
+            <div className="relative z-10 space-y-4 sm:space-y-5">
               <div>
                 <span
                   className="
@@ -162,7 +173,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                     rounded-full
                     bg-blue-500/10
                     border border-blue-500/20
-                    text-blue-500
+                    text-blue-600 dark:text-blue-400
                     text-[10px] sm:text-xs
                     font-bold
                     uppercase
@@ -174,36 +185,33 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                 </span>
               </div>
 
-              <div className="space-y-3">
-                <h4 className="text-black dark:text-white text-lg font-bold">
+              <div className="space-y-2 sm:space-y-3">
+                <h4 className="text-black dark:text-white text-base sm:text-lg font-bold tracking-tight">
                   Credentials Overview
                 </h4>
-
-                <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
+                <p className="text-xs sm:text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
                   This archive stores official certificates, validated learning
                   achievements, and specialized program credentials acquired
                   through{" "}
-                  <span className="font-semibold text-blue-500">
+                  <span className="font-bold text-blue-600 dark:text-blue-400">
                     {cert.sub}
                   </span>.
                 </p>
               </div>
 
-              <div className="grid grid-cols-2 gap-3 pt-2">
-
+              <div className="grid grid-cols-2 gap-3 pt-1">
                 <div
                   className="
                     rounded-2xl
                     border border-black/10 dark:border-white/10
-                    bg-black/[0.03] dark:bg-white/[0.03]
-                    p-4
+                    bg-black/[0.02] dark:bg-white/[0.02]
+                    p-3 sm:p-4
                   "
                 >
-                  <div className="text-2xl font-black text-black dark:text-white">
+                  <div className="text-xl sm:text-2xl font-black text-black dark:text-white">
                     {cert.subDegrees?.length || cert.links?.length || 1}
                   </div>
-
-                  <div className="text-[10px] sm:text-xs uppercase tracking-wide text-neutral-500 mt-1">
+                  <div className="text-[9px] sm:text-xs uppercase tracking-wide text-neutral-500 mt-0.5 font-medium">
                     Assets
                   </div>
                 </div>
@@ -212,30 +220,21 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                   className="
                     rounded-2xl
                     border border-black/10 dark:border-white/10
-                    bg-black/[0.03] dark:bg-white/[0.03]
-                    p-4
+                    bg-black/[0.02] dark:bg-white/[0.02]
+                    p-3 sm:p-4
                   "
                 >
-                  <div className="text-2xl font-black text-emerald-500">
+                  <div className="text-xl sm:text-2xl font-black text-emerald-500">
                     100%
                   </div>
-
-                  <div className="text-[10px] sm:text-xs uppercase tracking-wide text-neutral-500 mt-1">
+                  <div className="text-[9px] sm:text-xs uppercase tracking-wide text-neutral-500 mt-0.5 font-medium">
                     Verified
                   </div>
                 </div>
               </div>
 
-              <div className="pt-5 border-t border-black/5 dark:border-white/10">
-                <p
-                  className="
-                    text-[10px] sm:text-[11px]
-                    uppercase
-                    tracking-[0.15em]
-                    text-neutral-500
-                    font-mono
-                  "
-                >
+              <div className="pt-4 border-t border-black/5 dark:border-white/10 max-sm:hidden">
+                <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.15em] text-neutral-500 font-mono">
                   Additional certifications coming soon...
                 </p>
               </div>
@@ -243,177 +242,124 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
           </div>
         </div>
 
-        {/* ================= CONTENT ================= */}
-        <div className="lg:col-span-8 space-y-5">
-
+        {/* ================= CERTIFICATES CONTENT PANELS ================= */}
+        <div className="lg:col-span-8 space-y-4">
           {cert.isCollection ? (
             <>
-              <div className="flex items-center justify-between gap-3">
-                <h4
-                  className="
-                    text-xs sm:text-sm
-                    font-black
-                    tracking-[0.15em]
-                    uppercase
-                    text-blue-500
-                  "
-                >
-                  Specialized Tracks
+              <div className="flex items-center justify-between gap-3 px-1">
+                <h4 className="text-[10px] sm:text-sm font-black tracking-[0.15em] uppercase text-blue-600 dark:text-blue-400">
+                  // Specialized Tracks
                 </h4>
-
-                <div className="text-[10px] sm:text-xs uppercase tracking-wide text-neutral-500">
+                <div className="text-[9px] sm:text-xs uppercase tracking-wide text-neutral-500 font-medium">
                   {cert.subDegrees?.length} Programs
                 </div>
               </div>
 
-              {/* MOBILE 2 COLUMN */}
-              <div className="grid grid-cols-2 gap-3 sm:gap-5">
+              {/* Exact 2 columns split on mobile screens */}
+              <div className="grid grid-cols-2 gap-2.5 sm:gap-4 w-full">
+                {cert.subDegrees?.map((subDegree, sIdx) => {
+                  const sourceLink = subDegree.links?.find(link => link.type === "link");
+                  const imageAssets = subDegree.links?.filter(asset => asset.type === "image") || [];
 
-                {cert.subDegrees?.map((subDegree, sIdx) => (
-                  <motion.div
-                    key={sIdx}
-                    whileHover={{ y: -3 }}
-                    transition={{ duration: 0.2 }}
-                    className="
-                      group relative overflow-hidden
-                      rounded-2xl
-                      border border-black/10 dark:border-white/10
-                      bg-white/70 dark:bg-[#0b1120]
-                      backdrop-blur-xl
-                      shadow-lg
-                    "
-                  >
-                    <div
+                  return (
+                    <motion.div
+                      key={sIdx}
+                      whileHover={{ y: -2 }}
+                      transition={{ duration: 0.2 }}
                       className="
-                        absolute inset-0
-                        opacity-0 group-hover:opacity-100
-                        transition duration-500
-                        bg-gradient-to-br from-blue-500/10 to-cyan-500/10
+                        group relative overflow-hidden
+                        rounded-xl sm:rounded-2xl
+                        border border-black/10 dark:border-white/10
+                        bg-white/90 dark:bg-[#0b1120]/80
+                        backdrop-blur-md
+                        shadow-md hover:shadow-xl
+                        transition-all duration-300
+                        p-2.5 sm:p-4
+                        flex flex-col justify-between
                       "
-                    />
+                    >
+                      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
-                    <div className="relative z-10 p-3 sm:p-5 space-y-3">
+                      <div className="relative z-10 space-y-2.5 flex flex-col justify-between h-full w-full">
+                        <div className="space-y-0.5">
+                          <h5 className="text-[11px] sm:text-sm md:text-base font-extrabold text-black dark:text-white tracking-tight line-clamp-2 leading-tight">
+                            {subDegree.title}
+                          </h5>
+                          <p className="text-[8px] sm:text-[10px] uppercase tracking-wider text-neutral-400 dark:text-neutral-500 font-medium">
+                            Module
+                          </p>
+                        </div>
 
-                      <div className="space-y-1">
-                        <h5
-                          className="
-                            text-[11px] sm:text-lg
-                            font-bold
-                            text-black dark:text-white
-                            leading-tight
-                            line-clamp-2
-                          "
-                        >
-                          {subDegree.title}
-                        </h5>
-
-                        <p className="hidden sm:block text-sm text-neutral-500">
-                          Verified Program Credential
-                        </p>
-                      </div>
-
-                      {subDegree.links
-                        ?.filter(asset => asset.type === "image")
-                        .map((asset, index) => {
-
-                          const sourceLink = subDegree.links?.find(
-                            link => link.type === "link"
-                          );
-
-                          return (
-                            <div key={index} className="space-y-3">
-
-                              <div
-                                onClick={() => onPreviewImage(asset.target)}
-                                className="
-                                  relative overflow-hidden
-                                  rounded-xl sm:rounded-2xl
-                                  border border-black/10 dark:border-white/10
-                                  aspect-square sm:aspect-[4/3]
-                                  cursor-zoom-in
-                                  bg-black/10 dark:bg-black/20
-                                  group/image
-                                "
-                              >
-                                <img
-                                  src={asset.target}
-                                  alt={subDegree.title}
-                                  className="
-                                    w-full h-full
-                                    object-cover object-top
-                                    transition-transform duration-500
-                                    group-hover/image:scale-105
-                                  "
-                                />
-
-                                <div
-                                  className="
-                                    absolute inset-0
-                                    bg-black/40
-                                    opacity-0
-                                    group-hover/image:opacity-100
-                                    transition duration-300
-                                    flex items-center justify-center
-                                  "
-                                >
-                                  <div
-                                    className="
-                                      px-3 py-1.5
-                                      rounded-full
-                                      bg-blue-500
-                                      text-white
-                                      text-[9px]
-                                      font-bold
-                                      uppercase
-                                    "
-                                  >
-                                    Preview
-                                  </div>
+                        <div className="space-y-2 w-full">
+                          {imageAssets.map((asset, index) => (
+                            <div
+                              key={index}
+                              onClick={() => onPreviewImage(asset.target)}
+                              className="
+                                relative overflow-hidden
+                                rounded-lg sm:rounded-xl
+                                border border-black/5 dark:border-white/10
+                                aspect-[16/11]
+                                w-full
+                                cursor-zoom-in
+                                bg-neutral-200 dark:bg-black/40
+                                group/image
+                              "
+                            >
+                              <img
+                                src={asset.target}
+                                alt={subDegree.title}
+                                className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/image:scale-[1.02]"
+                              />
+                              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                <div className="px-2 py-1 rounded-full bg-blue-500 text-white text-[8px] font-bold uppercase tracking-wider shadow-md">
+                                  👁 Preview
                                 </div>
                               </div>
-
-                              {sourceLink && (
-                                <a
-                                  href={sourceLink.target}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                                  className="
-                                    flex items-center justify-center gap-2
-                                    w-full
-                                    px-3 py-2
-                                    rounded-xl
-                                    bg-cyan-500/10
-                                    border border-cyan-500/20
-                                    text-cyan-500
-                                    text-[9px] sm:text-xs
-                                    font-bold
-                                    uppercase
-                                    tracking-wide
-                                    transition-all duration-300
-                                    hover:bg-cyan-500
-                                    hover:text-white
-                                    active:scale-95
-                                  "
-                                >
-                                  🔗 Source
-                                </a>
-                              )}
                             </div>
-                          );
-                        })}
-                    </div>
-                  </motion.div>
-                ))}
+                          ))}
+
+                          {sourceLink && (
+                            <div className="w-full pt-0.5">
+                              <a
+                                href={sourceLink.target}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="
+                                  flex items-center justify-center gap-1
+                                  w-full
+                                  px-2 py-1.5 sm:py-2
+                                  rounded-lg sm:rounded-xl
+                                  bg-neutral-100 dark:bg-white/[0.03]
+                                  border border-black/5 dark:border-white/5
+                                  text-neutral-700 dark:text-neutral-300
+                                  text-[8px] sm:text-xs
+                                  font-bold
+                                  uppercase
+                                  tracking-wider
+                                  transition-all duration-200
+                                  hover:bg-blue-500 hover:text-white
+                                  hover:border-blue-500
+                                  active:scale-[0.98]
+                                "
+                              >
+                                🔗 Verify
+                              </a>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    </motion.div>
+                  );
+                })}
               </div>
             </>
           ) : (
+            /* ================= SINGLE DEGREE DISPLAY PANEL ================= */
             cert.links
               ?.filter(asset => asset.type === "image")
               .map((asset, index) => {
-
-                const sourceLink = cert.links?.find(
-                  link => link.type === "link"
-                );
+                const sourceLink = cert.links?.find(link => link.type === "link");
 
                 return (
                   <motion.div
@@ -425,118 +371,72 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                       group relative overflow-hidden
                       rounded-2xl sm:rounded-3xl
                       border border-black/10 dark:border-white/10
-                      bg-white/70 dark:bg-[#0b1120]
-                      backdrop-blur-xl
-                      shadow-lg sm:shadow-2xl
-                      p-4 sm:p-5
+                      bg-white/90 dark:bg-[#0b1120]/80
+                      backdrop-blur-md
+                      shadow-xl
+                      p-4 sm:p-6
+                      space-y-4
                     "
                   >
-                    <div className="relative z-10 space-y-4">
+                    <div className="flex items-center justify-between gap-3">
+                      <h4 className="text-xs sm:text-sm font-black tracking-[0.15em] uppercase text-blue-600 dark:text-blue-400">
+                        {asset.label}
+                      </h4>
+                      <div className="px-3 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase">
+                        Verified
+                      </div>
+                    </div>
 
-                      <div className="flex items-center justify-between gap-3">
-                        <h4
-                          className="
-                            text-xs sm:text-sm
-                            font-black
-                            tracking-[0.15em]
-                            uppercase
-                            text-blue-500
-                          "
-                        >
-                          {asset.label}
-                        </h4>
-
-                        <div
-                          className="
-                            px-3 py-1
-                            rounded-full
-                            bg-emerald-500/10
-                            border border-emerald-500/20
-                            text-emerald-500
-                            text-[10px]
-                            font-bold
-                          "
-                        >
-                          Verified
+                    <div
+                      onClick={() => onPreviewImage(asset.target)}
+                      className="
+                        relative overflow-hidden
+                        rounded-xl sm:rounded-2xl
+                        border border-black/5 dark:border-white/10
+                        aspect-[16/11]
+                        cursor-zoom-in
+                        bg-neutral-200 dark:bg-black/40
+                        group/image
+                      "
+                    >
+                      <img
+                        src={asset.target}
+                        alt={asset.label}
+                        className="w-full h-full object-cover object-top transition-transform duration-500 group-hover/image:scale-[1.015]"
+                      />
+                      <div className="absolute inset-0 bg-black/40 opacity-0 group-hover/image:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                        <div className="px-5 py-2 rounded-full bg-blue-500 text-white text-xs font-bold uppercase tracking-widest shadow-lg">
+                          👁 View Full Image
                         </div>
                       </div>
+                    </div>
 
-                      <div
-                        onClick={() => onPreviewImage(asset.target)}
+                    {sourceLink && (
+                      <a
+                        href={sourceLink.target}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="
-                          relative overflow-hidden
-                          rounded-2xl
-                          border border-black/10 dark:border-white/10
-                          aspect-[16/11]
-                          cursor-zoom-in
-                          bg-black/10 dark:bg-black/20
-                          group/image
+                          inline-flex items-center justify-center gap-2
+                          w-full sm:w-auto
+                          px-5 py-3
+                          rounded-xl
+                          bg-neutral-100 dark:bg-white/[0.03]
+                          border border-black/5 dark:border-white/5
+                          text-neutral-700 dark:text-neutral-300
+                          text-[10px] sm:text-xs
+                          font-bold
+                          uppercase
+                          tracking-wider
+                          transition-all duration-200
+                          hover:bg-blue-500 hover:text-white
+                          hover:border-blue-500
+                          active:scale-95
                         "
                       >
-                        <img
-                          src={asset.target}
-                          alt={asset.label}
-                          className="
-                            w-full h-full
-                            object-cover object-top
-                            transition-transform duration-500
-                            group-hover/image:scale-105
-                          "
-                        />
-
-                        <div
-                          className="
-                            absolute inset-0
-                            bg-black/50
-                            opacity-0
-                            group-hover/image:opacity-100
-                            transition duration-300
-                            flex items-center justify-center
-                          "
-                        >
-                          <div
-                            className="
-                              px-5 py-2
-                              rounded-full
-                              bg-blue-500
-                              text-white
-                              text-[10px] sm:text-xs
-                              font-bold
-                              uppercase
-                            "
-                          >
-                            👁 Open
-                          </div>
-                        </div>
-                      </div>
-
-                      {sourceLink && (
-                        <a
-                          href={sourceLink.target}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="
-                            inline-flex items-center justify-center gap-2
-                            w-full sm:w-auto
-                            px-4 py-2.5
-                            rounded-xl
-                            bg-cyan-500/10
-                            border border-cyan-500/20
-                            text-cyan-500
-                            text-[10px] sm:text-xs
-                            font-bold
-                            uppercase
-                            tracking-wide
-                            transition-all duration-300
-                            hover:bg-cyan-500
-                            hover:text-white
-                            active:scale-95
-                          "
-                        >
-                          🔗 Go To Source
-                        </a>
-                      )}
-                    </div>
+                        🔗 Verify Document Source
+                      </a>
+                    )}
                   </motion.div>
                 );
               })
