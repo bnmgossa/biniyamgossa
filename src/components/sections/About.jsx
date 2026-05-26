@@ -147,7 +147,7 @@ const About = () => {
               <h3 className="text-2xl md:text-4xl font-black text-black uppercase tracking-tighter italic leading-none">
                 BINIYAM <span className="text-green-500 border-b-2 border-emerald-500">GOSSA</span>
               </h3>
-              <p className="text-[12px] md:text-sm text-gray-500 dark:text-gray-400 font-medium max-w-md">Updated In February 2025.</p>
+              <p className="text-[12px] md:text-sm text-gray-500 dark:text-gray-400 font-medium max-w-md">Updated In February 2026.</p>
             </div>
 
             <div className="flex flex-row md:flex-col border-t md:border-t-0 md:border-l border-black/5 dark:border-white/5">
