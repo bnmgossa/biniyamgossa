@@ -12,9 +12,8 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
         space-y-4 sm:space-y-7
         text-left
 
-        /* Light mode: adaptive contrast on phone screens */
+        /* UI FIX: Opaque background values to completely block out your app's underlying white background */
         bg-[#dfe6ef] max-sm:bg-[#cad2dd]
-        /* Dark mode: pure clean black space on phone screens */
         dark:bg-[#030712] max-sm:dark:bg-[#000000]
 
         rounded-3xl
@@ -23,13 +22,13 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
         shadow-sm transition-colors duration-300
       "
     >
-      {/* ================= HEADER PANEL (MOBILE OPTIMIZED COMPACT ROW) ================= */}
+      {/* ================= HEADER PANEL ================= */}
       <div
         className="
           relative overflow-hidden
           rounded-2xl sm:rounded-3xl
           border border-black/10 dark:border-white/10
-          bg-white/80 dark:bg-[#0b1120]/90
+          bg-white/90 dark:bg-[#0b1120]/95
           backdrop-blur-xl
           shadow-md sm:shadow-2xl
         "
@@ -39,8 +38,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
         <div
           className="
             relative z-10
-            /* UI FIX: Side-by-side row layout on mobile instead of stacked boxes */
-            flex flex-row md:flex-row
+            flex flex-row
             justify-between
             items-center
             gap-3
@@ -78,7 +76,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
               {cert.name}
             </h3>
 
-            {/* Badges scale smaller and drop margins on mobile */}
             <div className="mt-1 sm:mt-3 flex flex-wrap items-center gap-1.5">
               <span
                 className="
@@ -115,7 +112,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
             </div>
           </div>
 
-          {/* UI FIX: Sleek compact square back button for phone headers */}
           <button
             onClick={onBack}
             className="
@@ -156,7 +152,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
               relative overflow-hidden
               rounded-2xl sm:rounded-3xl
               border border-black/10 dark:border-white/10
-              bg-white/80 dark:bg-[#0b1120]/90
+              bg-white/90 dark:bg-[#0b1120]/95
               backdrop-blur-xl
               p-4 sm:p-6
               shadow-lg sm:shadow-2xl
@@ -255,7 +251,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                 </div>
               </div>
 
-              {/* Exact 2 columns split on mobile screens */}
               <div className="grid grid-cols-2 gap-2.5 sm:gap-4 w-full">
                 {cert.subDegrees?.map((subDegree, sIdx) => {
                   const sourceLink = subDegree.links?.find(link => link.type === "link");
@@ -270,7 +265,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                         group relative overflow-hidden
                         rounded-xl sm:rounded-2xl
                         border border-black/10 dark:border-white/10
-                        bg-white/90 dark:bg-[#0b1120]/80
+                        bg-white/95 dark:bg-[#0b1120]/95
                         backdrop-blur-md
                         shadow-md hover:shadow-xl
                         transition-all duration-300
@@ -371,7 +366,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                       group relative overflow-hidden
                       rounded-2xl sm:rounded-3xl
                       border border-black/10 dark:border-white/10
-                      bg-white/90 dark:bg-[#0b1120]/80
+                      bg-white/95 dark:bg-[#0b1120]/95
                       backdrop-blur-md
                       shadow-xl
                       p-4 sm:p-6
