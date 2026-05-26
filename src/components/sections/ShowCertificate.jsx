@@ -7,7 +7,14 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.35 }}
-      className="w-full space-y-5 sm:space-y-7 text-left"
+      className="
+        w-full
+        space-y-5 sm:space-y-7
+        text-left
+        bg-[#f4f7fb] dark:bg-[#060816]
+        rounded-3xl
+        p-3 sm:p-5 md:p-6
+      "
     >
       {/* ================= HEADER ================= */}
       <div
@@ -15,7 +22,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
           relative overflow-hidden
           rounded-2xl sm:rounded-3xl
           border border-black/10 dark:border-white/10
-          bg-white/80 dark:bg-white/[0.03]
+          bg-white/90 dark:bg-[#0d1222]
           backdrop-blur-xl
           shadow-lg sm:shadow-2xl
         "
@@ -135,7 +142,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
               relative overflow-hidden
               rounded-2xl sm:rounded-3xl
               border border-black/10 dark:border-white/10
-              bg-white/80 dark:bg-white/[0.03]
+              bg-white/90 dark:bg-[#0d1222]
               backdrop-blur-xl
               p-4 sm:p-6
               shadow-lg sm:shadow-2xl
@@ -263,8 +270,10 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                 </div>
               </div>
 
-              {/* GRID */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+              {/* IMPORTANT FIX HERE */}
+              {/* MOBILE = 2 CARDS SIDE BY SIDE */}
+              <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-2 gap-3 sm:gap-5">
+
                 {cert.subDegrees?.map((subDegree, sIdx) => (
                   <motion.div
                     key={sIdx}
@@ -272,11 +281,11 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                     transition={{ duration: 0.2 }}
                     className="
                       group relative overflow-hidden
-                      rounded-2xl sm:rounded-3xl
+                      rounded-2xl
                       border border-black/10 dark:border-white/10
-                      bg-white/80 dark:bg-white/[0.03]
+                      bg-white/90 dark:bg-[#0d1222]
                       backdrop-blur-xl
-                      shadow-lg sm:shadow-2xl
+                      shadow-lg
                     "
                   >
                     {/* Glow */}
@@ -289,34 +298,25 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                       "
                     />
 
-                    <div className="relative z-10 p-4 sm:p-5 space-y-4">
+                    <div className="relative z-10 p-3 sm:p-5 space-y-3">
 
                       {/* TITLE */}
-                      <div className="flex items-start justify-between gap-3">
-                        <div className="min-w-0">
-                          <h5 className="text-base sm:text-lg font-bold text-black dark:text-white leading-tight break-words">
-                            {subDegree.title}
-                          </h5>
-
-                          <p className="text-xs sm:text-sm text-neutral-500 mt-1">
-                            Verified Program Credential
-                          </p>
-                        </div>
-
-                        <div
+                      <div className="space-y-1">
+                        <h5
                           className="
-                            shrink-0
-                            px-3 py-1
-                            rounded-full
-                            bg-blue-500/10
-                            border border-blue-500/20
-                            text-blue-500
-                            text-[10px] sm:text-xs
+                            text-xs sm:text-lg
                             font-bold
+                            text-black dark:text-white
+                            leading-tight
+                            line-clamp-2
                           "
                         >
-                          Certified
-                        </div>
+                          {subDegree.title}
+                        </h5>
+
+                        <p className="hidden sm:block text-sm text-neutral-500">
+                          Verified Program Credential
+                        </p>
                       </div>
 
                       {/* IMAGE */}
@@ -331,13 +331,15 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                           return (
                             <div key={index} className="space-y-3">
 
+                              {/* IMAGE */}
                               <div
                                 onClick={() => onPreviewImage(asset.target)}
                                 className="
                                   relative overflow-hidden
-                                  rounded-2xl
+                                  rounded-xl sm:rounded-2xl
                                   border border-black/10 dark:border-white/10
-                                  aspect-[5/4] sm:aspect-[4/3]
+                                  aspect-[1/1]
+                                  sm:aspect-[4/3]
                                   cursor-zoom-in
                                   bg-black/10 dark:bg-black/20
                                   group/image
@@ -358,7 +360,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                                 <div
                                   className="
                                     absolute inset-0
-                                    bg-black/50
+                                    bg-black/40
                                     opacity-0
                                     group-hover/image:opacity-100
                                     transition duration-300
@@ -367,36 +369,35 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                                 >
                                   <div
                                     className="
-                                      px-4 py-2
+                                      px-3 py-1.5
                                       rounded-full
                                       bg-blue-500
                                       text-white
-                                      text-[10px] sm:text-xs
+                                      text-[9px]
                                       font-bold
                                       uppercase
-                                      tracking-wide
                                     "
                                   >
-                                    👁 Preview
+                                    Preview
                                   </div>
                                 </div>
                               </div>
 
-                              {/* BUTTON */}
+                              {/* SOURCE BUTTON */}
                               {sourceLink && (
                                 <a
                                   href={sourceLink.target}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="
-                                    inline-flex items-center justify-center gap-2
-                                    w-full sm:w-auto
-                                    px-4 py-2.5
+                                    flex items-center justify-center gap-2
+                                    w-full
+                                    px-3 py-2
                                     rounded-xl
                                     bg-cyan-500/10
                                     border border-cyan-500/20
                                     text-cyan-500
-                                    text-[10px] sm:text-xs
+                                    text-[9px] sm:text-xs
                                     font-bold
                                     uppercase
                                     tracking-wide
@@ -406,7 +407,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                                     active:scale-95
                                   "
                                 >
-                                  🔗 Go To Source
+                                  🔗 Source
                                 </a>
                               )}
                             </div>
@@ -437,24 +438,15 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                       group relative overflow-hidden
                       rounded-2xl sm:rounded-3xl
                       border border-black/10 dark:border-white/10
-                      bg-white/80 dark:bg-white/[0.03]
+                      bg-white/90 dark:bg-[#0d1222]
                       backdrop-blur-xl
                       shadow-lg sm:shadow-2xl
                       p-4 sm:p-5
                     "
                   >
-                    <div
-                      className="
-                        absolute inset-0
-                        opacity-0 group-hover:opacity-100
-                        transition duration-500
-                        bg-gradient-to-br from-blue-500/10 to-cyan-500/10
-                      "
-                    />
-
                     <div className="relative z-10 space-y-4">
 
-                      {/* HEADER */}
+                      {/* TITLE */}
                       <div className="flex items-center justify-between gap-3">
                         <h4
                           className="
@@ -463,7 +455,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                             tracking-[0.15em]
                             uppercase
                             text-blue-500
-                            break-words
                           "
                         >
                           {asset.label}
@@ -471,13 +462,12 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
 
                         <div
                           className="
-                            shrink-0
                             px-3 py-1
                             rounded-full
                             bg-emerald-500/10
                             border border-emerald-500/20
                             text-emerald-500
-                            text-[10px] sm:text-xs
+                            text-[10px]
                             font-bold
                           "
                         >
@@ -529,15 +519,14 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                               text-[10px] sm:text-xs
                               font-bold
                               uppercase
-                              tracking-wide
                             "
                           >
-                            👁 Open Fullscreen
+                            👁 Open
                           </div>
                         </div>
                       </div>
 
-                      {/* SOURCE */}
+                      {/* BUTTON */}
                       {sourceLink && (
                         <a
                           href={sourceLink.target}
