@@ -4,36 +4,95 @@ import { motion } from "framer-motion";
 const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
   return (
     <motion.div
-      initial={{ opacity: 0, y: 25 }}
+      initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.45 }}
-      className="w-full space-y-8 text-left"
+      transition={{ duration: 0.35 }}
+      className="w-full space-y-5 sm:space-y-7 text-left"
     >
-      {/* HEADER */}
-      <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl">
-        
+      {/* ================= HEADER ================= */}
+      <div
+        className="
+          relative overflow-hidden
+          rounded-2xl sm:rounded-3xl
+          border border-black/10 dark:border-white/10
+          bg-white/80 dark:bg-white/[0.03]
+          backdrop-blur-xl
+          shadow-lg sm:shadow-2xl
+        "
+      >
         {/* Glow */}
         <div className="absolute inset-0 bg-gradient-to-br from-blue-500/10 via-transparent to-cyan-500/10 pointer-events-none" />
 
-        <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 p-6 md:p-8">
-          
+        <div
+          className="
+            relative z-10
+            flex flex-col md:flex-row
+            justify-between
+            items-start md:items-center
+            gap-5
+            p-4 sm:p-6 md:p-8
+          "
+        >
           {/* LEFT */}
-          <div>
-            <div className="flex items-center gap-2 text-[10px] font-mono tracking-[0.3em] uppercase text-blue-400 mb-3">
-              <span className="w-2 h-2 bg-blue-500 rounded-full animate-pulse shadow-[0_0_12px_#3b82f6]" />
+          <div className="min-w-0 w-full">
+            <div
+              className="
+                flex items-center gap-2
+                text-[9px] sm:text-[10px]
+                font-mono
+                tracking-[0.15em] sm:tracking-[0.25em]
+                uppercase
+                text-blue-500
+                mb-2 sm:mb-3
+              "
+            >
+              <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
               VERIFIED_SECURITY_REGISTRY
             </div>
 
-            <h3 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-none">
+            <h3
+              className="
+                text-2xl sm:text-3xl md:text-5xl
+                font-black
+                text-black dark:text-white
+                tracking-tight
+                leading-none
+                break-words
+              "
+            >
               {cert.name}
             </h3>
 
-            <div className="mt-3 flex flex-wrap items-center gap-3">
-              <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-xs font-semibold tracking-wider uppercase text-blue-300">
+            <div className="mt-3 flex flex-wrap items-center gap-2">
+              <span
+                className="
+                  px-3 py-1
+                  rounded-full
+                  bg-blue-500/10
+                  border border-blue-500/20
+                  text-[10px] sm:text-xs
+                  font-semibold
+                  tracking-wide
+                  uppercase
+                  text-blue-500
+                "
+              >
                 {cert.sub}
               </span>
 
-              <span className="px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-xs font-semibold tracking-wider uppercase text-emerald-300">
+              <span
+                className="
+                  px-3 py-1
+                  rounded-full
+                  bg-emerald-500/10
+                  border border-emerald-500/20
+                  text-[10px] sm:text-xs
+                  font-semibold
+                  tracking-wide
+                  uppercase
+                  text-emerald-500
+                "
+              >
                 Verified Credentials
               </span>
             </div>
@@ -43,15 +102,20 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
           <button
             onClick={onBack}
             className="
-              group relative overflow-hidden
-              px-6 py-3 rounded-2xl
+              w-full md:w-auto
+              flex items-center justify-center
+              px-4 py-2.5 sm:px-5 sm:py-3
+              rounded-xl sm:rounded-2xl
               border border-red-500/20
               bg-red-500/5
-              text-red-400
-              text-xs font-bold uppercase tracking-[0.2em]
+              text-red-500
+              text-[10px] sm:text-xs
+              font-bold
+              uppercase
+              tracking-[0.15em]
               transition-all duration-300
-              hover:bg-red-500 hover:text-white
-              hover:shadow-[0_0_30px_rgba(239,68,68,0.4)]
+              hover:bg-red-500
+              hover:text-white
               active:scale-95
             "
           >
@@ -60,98 +124,113 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
         </div>
       </div>
 
-      {/* MAIN GRID */}
-      <div className="grid grid-cols-1 xl:grid-cols-12 gap-6">
+      {/* ================= MAIN LAYOUT ================= */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6">
 
-        {/* SIDEBAR */}
-        <div className="xl:col-span-4">
+        {/* ================= SIDEBAR ================= */}
+        <div className="lg:col-span-4">
           <div
             className="
-              sticky top-6
-              rounded-3xl
-              border border-white/10
-              bg-white/5
+              lg:sticky lg:top-6
+              relative overflow-hidden
+              rounded-2xl sm:rounded-3xl
+              border border-black/10 dark:border-white/10
+              bg-white/80 dark:bg-white/[0.03]
               backdrop-blur-xl
-              p-6
-              shadow-2xl
-              overflow-hidden
+              p-4 sm:p-6
+              shadow-lg sm:shadow-2xl
             "
           >
-            {/* Glow */}
             <div className="absolute inset-0 bg-gradient-to-b from-blue-500/10 via-transparent to-transparent pointer-events-none" />
 
-            <div className="relative z-10 space-y-6">
-              
+            <div className="relative z-10 space-y-5">
+
+              {/* BADGE */}
               <div>
                 <span
                   className="
                     inline-flex items-center gap-2
-                    px-3 py-1 rounded-full
+                    px-3 py-1
+                    rounded-full
                     bg-blue-500/10
                     border border-blue-500/20
-                    text-blue-300
-                    text-xs font-bold uppercase tracking-widest
+                    text-blue-500
+                    text-[10px] sm:text-xs
+                    font-bold
+                    uppercase
+                    tracking-wide
                   "
                 >
-                  <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse" />
+                  <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
                   Verified Issuer
                 </span>
               </div>
 
-              <div className="space-y-4">
-                <h4 className="text-white text-lg font-bold tracking-tight">
+              {/* DESCRIPTION */}
+              <div className="space-y-3">
+                <h4 className="text-black dark:text-white text-lg font-bold">
                   Credentials Overview
                 </h4>
 
-                <p className="text-sm leading-relaxed text-neutral-300">
+                <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
                   This archive stores official certificates, validated learning
                   achievements, and specialized program credentials acquired
                   through{" "}
-                  <span className="text-blue-400 font-semibold">
+                  <span className="font-semibold text-blue-500">
                     {cert.sub}
                   </span>.
                 </p>
               </div>
 
               {/* STATS */}
-              <div className="grid grid-cols-2 gap-4 pt-4">
-                
+              <div className="grid grid-cols-2 gap-3 pt-2">
+
                 <div
                   className="
-                    rounded-2xl border border-white/10
-                    bg-white/[0.03]
+                    rounded-2xl
+                    border border-black/10 dark:border-white/10
+                    bg-black/[0.02] dark:bg-white/[0.03]
                     p-4
                   "
                 >
-                  <div className="text-2xl font-black text-white">
+                  <div className="text-2xl font-black text-black dark:text-white">
                     {cert.subDegrees?.length || cert.links?.length || 1}
                   </div>
 
-                  <div className="text-xs uppercase tracking-wider text-neutral-400 mt-1">
+                  <div className="text-[10px] sm:text-xs uppercase tracking-wide text-neutral-500 mt-1">
                     Assets
                   </div>
                 </div>
 
                 <div
                   className="
-                    rounded-2xl border border-white/10
-                    bg-white/[0.03]
+                    rounded-2xl
+                    border border-black/10 dark:border-white/10
+                    bg-black/[0.02] dark:bg-white/[0.03]
                     p-4
                   "
                 >
-                  <div className="text-2xl font-black text-emerald-400">
+                  <div className="text-2xl font-black text-emerald-500">
                     100%
                   </div>
 
-                  <div className="text-xs uppercase tracking-wider text-neutral-400 mt-1">
+                  <div className="text-[10px] sm:text-xs uppercase tracking-wide text-neutral-500 mt-1">
                     Verified
                   </div>
                 </div>
               </div>
 
               {/* FOOTER */}
-              <div className="pt-6 border-t border-white/10">
-                <p className="text-[11px] uppercase tracking-[0.25em] text-neutral-500 font-mono">
+              <div className="pt-5 border-t border-black/5 dark:border-white/10">
+                <p
+                  className="
+                    text-[10px] sm:text-[11px]
+                    uppercase
+                    tracking-[0.15em]
+                    text-neutral-500
+                    font-mono
+                  "
+                >
                   Additional certifications coming soon...
                 </p>
               </div>
@@ -159,68 +238,81 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
           </div>
         </div>
 
-        {/* CONTENT */}
-        <div className="xl:col-span-8 space-y-5">
+        {/* ================= CONTENT ================= */}
+        <div className="lg:col-span-8 space-y-5">
 
-          {/* COLLECTION CERTIFICATES */}
+          {/* COLLECTION */}
           {cert.isCollection ? (
             <>
-              <div className="flex items-center justify-between">
-                <h4 className="text-sm font-black tracking-[0.25em] uppercase text-blue-400">
+              {/* TOP BAR */}
+              <div className="flex items-center justify-between gap-3">
+                <h4
+                  className="
+                    text-xs sm:text-sm
+                    font-black
+                    tracking-[0.15em]
+                    uppercase
+                    text-blue-500
+                  "
+                >
                   Specialized Tracks
                 </h4>
 
-                <div className="text-xs text-neutral-500 uppercase tracking-widest">
+                <div className="text-[10px] sm:text-xs uppercase tracking-wide text-neutral-500">
                   {cert.subDegrees?.length} Programs
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* GRID */}
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 {cert.subDegrees?.map((subDegree, sIdx) => (
                   <motion.div
                     key={sIdx}
-                    whileHover={{ y: -5 }}
-                    transition={{ duration: 0.25 }}
+                    whileHover={{ y: -3 }}
+                    transition={{ duration: 0.2 }}
                     className="
                       group relative overflow-hidden
-                      rounded-3xl
-                      border border-white/10
-                      bg-white/5
+                      rounded-2xl sm:rounded-3xl
+                      border border-black/10 dark:border-white/10
+                      bg-white/80 dark:bg-white/[0.03]
                       backdrop-blur-xl
-                      shadow-2xl
+                      shadow-lg sm:shadow-2xl
                     "
                   >
                     {/* Glow */}
                     <div
                       className="
-                        absolute inset-0 opacity-0
-                        group-hover:opacity-100
-                        transition duration-700
+                        absolute inset-0
+                        opacity-0 group-hover:opacity-100
+                        transition duration-500
                         bg-gradient-to-br from-blue-500/10 to-cyan-500/10
                       "
                     />
 
-                    <div className="relative z-10 p-5 space-y-4">
+                    <div className="relative z-10 p-4 sm:p-5 space-y-4">
 
                       {/* TITLE */}
-                      <div className="flex items-start justify-between gap-4">
-                        <div>
-                          <h5 className="text-lg font-bold text-white leading-tight">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                          <h5 className="text-base sm:text-lg font-bold text-black dark:text-white leading-tight break-words">
                             {subDegree.title}
                           </h5>
 
-                          <p className="text-sm text-neutral-400 mt-1">
+                          <p className="text-xs sm:text-sm text-neutral-500 mt-1">
                             Verified Program Credential
                           </p>
                         </div>
 
                         <div
                           className="
-                            px-3 py-1 rounded-full
+                            shrink-0
+                            px-3 py-1
+                            rounded-full
                             bg-blue-500/10
                             border border-blue-500/20
-                            text-blue-300
-                            text-xs font-bold
+                            text-blue-500
+                            text-[10px] sm:text-xs
+                            font-bold
                           "
                         >
                           Certified
@@ -232,7 +324,6 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                         ?.filter(asset => asset.type === "image")
                         .map((asset, index) => {
 
-                          // Find source link
                           const sourceLink = subDegree.links?.find(
                             link => link.type === "link"
                           );
@@ -240,16 +331,15 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                           return (
                             <div key={index} className="space-y-3">
 
-                              {/* IMAGE CARD */}
                               <div
                                 onClick={() => onPreviewImage(asset.target)}
                                 className="
                                   relative overflow-hidden
                                   rounded-2xl
-                                  border border-white/10
-                                  aspect-[4/3]
+                                  border border-black/10 dark:border-white/10
+                                  aspect-[5/4] sm:aspect-[4/3]
                                   cursor-zoom-in
-                                  bg-black/20
+                                  bg-black/10 dark:bg-black/20
                                   group/image
                                 "
                               >
@@ -257,8 +347,9 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                                   src={asset.target}
                                   alt={subDegree.title}
                                   className="
-                                    w-full h-full object-cover object-top
-                                    transition-transform duration-700
+                                    w-full h-full
+                                    object-cover object-top
+                                    transition-transform duration-500
                                     group-hover/image:scale-105
                                   "
                                 />
@@ -270,41 +361,48 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                                     bg-black/50
                                     opacity-0
                                     group-hover/image:opacity-100
-                                    transition-all duration-300
+                                    transition duration-300
                                     flex items-center justify-center
                                   "
                                 >
                                   <div
                                     className="
-                                      px-5 py-2 rounded-full
+                                      px-4 py-2
+                                      rounded-full
                                       bg-blue-500
-                                      text-white text-xs
-                                      font-bold uppercase tracking-widest
-                                      shadow-2xl
+                                      text-white
+                                      text-[10px] sm:text-xs
+                                      font-bold
+                                      uppercase
+                                      tracking-wide
                                     "
                                   >
-                                    👁 Preview Certificate
+                                    👁 Preview
                                   </div>
                                 </div>
                               </div>
 
-                              {/* SOURCE BUTTON */}
+                              {/* BUTTON */}
                               {sourceLink && (
                                 <a
                                   href={sourceLink.target}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="
-                                    inline-flex items-center gap-2
-                                    px-4 py-2 rounded-xl
+                                    inline-flex items-center justify-center gap-2
+                                    w-full sm:w-auto
+                                    px-4 py-2.5
+                                    rounded-xl
                                     bg-cyan-500/10
                                     border border-cyan-500/20
-                                    text-cyan-300
-                                    text-xs font-bold uppercase tracking-widest
+                                    text-cyan-500
+                                    text-[10px] sm:text-xs
+                                    font-bold
+                                    uppercase
+                                    tracking-wide
                                     transition-all duration-300
                                     hover:bg-cyan-500
                                     hover:text-white
-                                    hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]
                                     active:scale-95
                                   "
                                 >
@@ -334,41 +432,53 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                     key={index}
                     initial={{ opacity: 0, scale: 0.98 }}
                     animate={{ opacity: 1, scale: 1 }}
-                    transition={{ duration: 0.4 }}
+                    transition={{ duration: 0.35 }}
                     className="
                       group relative overflow-hidden
-                      rounded-3xl
-                      border border-white/10
-                      bg-white/5
+                      rounded-2xl sm:rounded-3xl
+                      border border-black/10 dark:border-white/10
+                      bg-white/80 dark:bg-white/[0.03]
                       backdrop-blur-xl
-                      shadow-2xl
-                      p-5
+                      shadow-lg sm:shadow-2xl
+                      p-4 sm:p-5
                     "
                   >
                     <div
                       className="
-                        absolute inset-0 opacity-0
-                        group-hover:opacity-100
-                        transition duration-700
+                        absolute inset-0
+                        opacity-0 group-hover:opacity-100
+                        transition duration-500
                         bg-gradient-to-br from-blue-500/10 to-cyan-500/10
                       "
                     />
 
                     <div className="relative z-10 space-y-4">
 
-                      {/* TITLE */}
-                      <div className="flex items-center justify-between">
-                        <h4 className="text-sm font-black tracking-[0.25em] uppercase text-blue-400">
+                      {/* HEADER */}
+                      <div className="flex items-center justify-between gap-3">
+                        <h4
+                          className="
+                            text-xs sm:text-sm
+                            font-black
+                            tracking-[0.15em]
+                            uppercase
+                            text-blue-500
+                            break-words
+                          "
+                        >
                           {asset.label}
                         </h4>
 
                         <div
                           className="
-                            px-3 py-1 rounded-full
+                            shrink-0
+                            px-3 py-1
+                            rounded-full
                             bg-emerald-500/10
                             border border-emerald-500/20
-                            text-emerald-300
-                            text-xs font-bold
+                            text-emerald-500
+                            text-[10px] sm:text-xs
+                            font-bold
                           "
                         >
                           Verified
@@ -381,10 +491,10 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                         className="
                           relative overflow-hidden
                           rounded-2xl
-                          border border-white/10
-                          aspect-[16/10]
+                          border border-black/10 dark:border-white/10
+                          aspect-[16/11]
                           cursor-zoom-in
-                          bg-black/20
+                          bg-black/10 dark:bg-black/20
                           group/image
                         "
                       >
@@ -392,8 +502,9 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                           src={asset.target}
                           alt={asset.label}
                           className="
-                            w-full h-full object-cover object-top
-                            transition-transform duration-700
+                            w-full h-full
+                            object-cover object-top
+                            transition-transform duration-500
                             group-hover/image:scale-105
                           "
                         />
@@ -411,11 +522,14 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                         >
                           <div
                             className="
-                              px-6 py-3 rounded-full
+                              px-5 py-2
+                              rounded-full
                               bg-blue-500
-                              text-white text-xs font-black
-                              uppercase tracking-[0.2em]
-                              shadow-2xl
+                              text-white
+                              text-[10px] sm:text-xs
+                              font-bold
+                              uppercase
+                              tracking-wide
                             "
                           >
                             👁 Open Fullscreen
@@ -423,23 +537,27 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                         </div>
                       </div>
 
-                      {/* SOURCE BUTTON */}
+                      {/* SOURCE */}
                       {sourceLink && (
                         <a
                           href={sourceLink.target}
                           target="_blank"
                           rel="noopener noreferrer"
                           className="
-                            inline-flex items-center gap-2
-                            px-4 py-2 rounded-xl
+                            inline-flex items-center justify-center gap-2
+                            w-full sm:w-auto
+                            px-4 py-2.5
+                            rounded-xl
                             bg-cyan-500/10
                             border border-cyan-500/20
-                            text-cyan-300
-                            text-xs font-bold uppercase tracking-widest
+                            text-cyan-500
+                            text-[10px] sm:text-xs
+                            font-bold
+                            uppercase
+                            tracking-wide
                             transition-all duration-300
                             hover:bg-cyan-500
                             hover:text-white
-                            hover:shadow-[0_0_20px_rgba(6,182,212,0.4)]
                             active:scale-95
                           "
                         >
