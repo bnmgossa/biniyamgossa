@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ShowCertificate from './ShowCertificate'; 
 import { certificateData } from '../../data/certeficates'; 
-import resume from "../../assets/BINIYAM_GOSSA_KEBEDE.pdf";
+import CV from "../../assets/BINIYAM_GOSSA_KEBEDE.pdf";
 
 const About = () => {
   const [selectedImg, setSelectedImg] = useState(null);
@@ -151,10 +151,10 @@ const About = () => {
             </div>
 
             <div className="flex flex-row md:flex-col border-t md:border-t-0 md:border-l border-black/5 dark:border-white/5">
-              <a href={resume} target="_blank" rel="noopener noreferrer" className="flex-1 md:w-48 flex bg-black/10 items-center justify-center gap-3 p-6 text-[10px] font-black uppercase tracking-widest text-black hover:bg-blue-500 hover:text-white transition-all duration-300">
+              <a href={CV} target="_blank" rel="noopener noreferrer" className="flex-1 md:w-48 flex bg-black/10 items-center justify-center gap-3 p-6 text-[10px] font-black uppercase tracking-widest text-black hover:bg-blue-500 hover:text-white transition-all duration-300">
                 <span className="text-red-500">01</span> Preview
               </a>
-              <a href={resume} download="BINIYAM_GOSSA_KEBEDE_CV.pdf" className="flex-1 md:w-48 flex items-center justify-center gap-3 p-6 text-[10px] font-black uppercase tracking-widest bg-emerald-500 text-white hover:bg-emerald-600 transition-all duration-300 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)]">
+              <a href={CV} download="BINIYAM_GOSSA_KEBEDE_CV.pdf" className="flex-1 md:w-48 flex items-center justify-center gap-3 p-6 text-[10px] font-black uppercase tracking-widest bg-emerald-500 text-white hover:bg-emerald-600 transition-all duration-300 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)]">
                 <span className="opacity-40">02</span> Download
               </a>
             </div>
