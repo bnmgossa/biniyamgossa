@@ -7,7 +7,7 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: 'home', icon: <Home size={20} /> },
     { name: 'About', href: 'about', icon: <User size={20} /> },
-    { name: 'Skills', href: 'skills', icon: <Zap size={20} /> },
+    { name: 'Skil ls', href: 'skills', icon: <Zap size={20} /> },
     { name: 'Works', href: 'projects', icon: <Briefcase size={20} /> },
     { name: 'Contact', href: 'contact', icon: <MessageSquare size={20} /> },
   ];
