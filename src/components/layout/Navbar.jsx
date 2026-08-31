@@ -1,7 +1,7 @@
 import React from 'react';
 import { Home, User, Zap, Briefcase, MessageSquare, FileText } from 'lucide-react';
 import logoImg from "../../../public/logo.png"
-import resume from "../../assets/BINIYAM GOSSA MASTER CV.pdf"
+import resume from "../../assets/BINIYAM_GOSSA_KEBEDE.pdf"
 
 const Navbar = () => {
   const navLinks = [
