@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ShowCertificate from './ShowCertificate'; 
 import { certificateData } from '../../data/certeficates'; 
-import resume from "../../assets/BINIYAM GOSSA MASTER CV.pdf";
+import resume from "../../assets/BINIYAM_GOSSA_KEBEDE.pdf";
 
 const About = () => {
   const [selectedImg, setSelectedImg] = useState(null);
