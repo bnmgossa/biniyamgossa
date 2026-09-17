@@ -1,0 +1,7 @@
+/preview-image.png
+  Access-Control-Allow-Origin: *
+  Content-Type: image/png
+  Cache-Control: public, max-age=3600
+
+/*
+  X-Robots-Tag: all
