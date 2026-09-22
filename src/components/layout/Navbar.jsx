@@ -7,11 +7,11 @@ const Navbar = () => {
   const navLinks = [
     { name: 'Home', href: 'home', icon: <Home size={20} /> },
     { name: 'About', href: 'about', icon: <User size={20} /> },
-<<<<<<< HEAD
+
     { name: 'Skills', href: 'skills', icon: <Zap size={20} /> },
-=======
+
     { name: 'Skil ls', href: 'skills', icon: <Zap size={20} /> },
->>>>>>> 80f5a01cd08a574b78f344892920751b68ebe8dd
+
     { name: 'Works', href: 'projects', icon: <Briefcase size={20} /> },
     { name: 'Contact', href: 'contact', icon: <MessageSquare size={20} /> },
   ];
@@ -71,8 +71,6 @@ const Navbar = () => {
   );
 };
 
-<<<<<<< HEAD
+
 export default Navbar;
-=======
-export default Navbar;
->>>>>>> 80f5a01cd08a574b78f344892920751b68ebe8dd
+
