@@ -1,0 +1,1 @@
+export { certificateData } from './data';

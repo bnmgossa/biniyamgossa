@@ -1,0 +1,1 @@
+export { itProjects as academicProjects } from './data';
