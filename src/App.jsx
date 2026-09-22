@@ -4,7 +4,6 @@ import Hero from './components/sections/Hero';
 import About from './components/sections/About';
 import ProjectShowcase from './components/sections/ProjectShowcase';
 import Skills from './components/sections/Skills';
-import Projects from './components/sections/Projects';
 import Contact from './components/sections/Contact';
 
 function App() {
@@ -16,7 +15,6 @@ function App() {
           <section id="about" ><About /></section>
           <ProjectShowcase />
           <section id="skills"><Skills /></section>
-          <section id="projects"><Projects /></section>
           <section id="contact"><Contact /></section>
           <div className="h-[20vh] pointer-events-none" />
         </main>

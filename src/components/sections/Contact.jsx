@@ -13,8 +13,8 @@ const Contact = () => {
     },
     { 
       name: 'Email', 
-      link: 'mailto:binigossa1@gmail.com',
-      username: 'binigoss...',
+      link: 'mailto:bnmgigo@gmail.com',
+      username: 'bnmgigo@gmail.com',
       img: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg',
       shadow: 'shadow-[box-shadow:-15px_10px_30px_-10px_rgba(59,130,246,0.5),0px_10px_30px_-10px_rgba(239,68,68,0.5),15px_10px_30px_-10px_rgba(234,179,8,0.5),30px_10px_30px_-10px_rgba(34,197,94,0.5)]',
       hoverShadow: 'hover:shadow-sky-500/40',
@@ -22,8 +22,8 @@ const Contact = () => {
     },
     { 
       name: 'Telegram', 
-      link: 'https://t.me/biniyamgossa',
-      username: '@biniyamgossa',
+      link: 'https://t.me/bnmgigo',
+      username: '@bnmgigo',
       img: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg',
       shadow: 'shadow-md shadow-sky-500',
       hoverShadow: 'hover:shadow-blue-500',
@@ -31,8 +31,8 @@ const Contact = () => {
     },
     { 
       name: 'Instagram', 
-      link: 'https://instagram.com/biniyamgossa',
-      username: '@biniyamgossa',
+      link: 'https://instagram.com/bnmgigo',
+      username: '@bnmgigo',
       img: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png',
       shadow: 'shadow-md shadow-red-500',
       hoverShadow: 'hover:shadow-pink-500/40',
@@ -40,8 +40,8 @@ const Contact = () => {
     },
     { 
       name: 'TikTok', 
-      link: 'https://tiktok.com/@biniyamgossa',
-      username: '@biniyamgossa',
+      link: 'https://tiktok.com/@bnmgigo',
+      username: '@bnmgigo',
       img: 'https://upload.wikimedia.org/wikipedia/commons/3/34/Ionicons_logo-tiktok.svg',
       shadow: 'shadow-md shadow-black',
       hoverShadow: 'hover:shadow-blue-600/40',
@@ -50,7 +50,7 @@ const Contact = () => {
     { 
       name: 'Facebook', 
       link: 'https://facebook.com/biniyamgossa',
-      username: 'biniyamgossa',
+      username: 'biniyam gossa',
       img: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png',
       shadow: 'shadow-md shadow-sky-800',
       hoverShadow: 'hover:shadow-blue-600/40',
