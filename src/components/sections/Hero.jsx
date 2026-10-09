@@ -1,4 +1,3 @@
-import React from "react";
 import { ArrowDownRight, ArrowUpRight, MapPin } from "lucide-react";
 import profile from "../../assets/images/profile/profile.jpeg";
 import resume from "../../assets/BINIYAM_GOSSA_KEBEDE.pdf";
