@@ -7,7 +7,7 @@ import Contact from './components/sections/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-transparent scroll-smooth transition-colors duration-500">
+    <div className="min-h-screen bg-white text-gray-900 scroll-smooth transition-colors duration-500 dark:bg-gray-950 dark:text-gray-100">
         <Navbar />
         <main id="main-content" className="mx-auto max-w-6xl space-y-20 px-4 pb-28 pt-24 sm:px-6 sm:pt-28 lg:px-8">
           <section id="home"><Hero /></section>
