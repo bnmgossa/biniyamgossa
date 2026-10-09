@@ -75,16 +75,16 @@ const About = () => {
             <div className="absolute top-0 right-0 -mr-16 -mt-16 w-32 h-32 bg-green-500/40 rounded-full blur-3xl group-hover:bg-green-500/20 transition-all duration-500" />
             <div className="relative space-y-4">
               <div className="space-y-1">
-                <h3 className="text-lg md:text-2xl font-black text-black uppercase tracking-tighter italic">
+                <h3 className="text-lg md:text-2xl font-black text-gray-950 dark:text-white uppercase tracking-tighter italic">
                   BSc Computer Science <span className="text-green-500">Graduate</span>
                 </h3>
                 <div className="h-1 w-12 bg-green-500 rounded-full" />
               </div>
-              <p className="text-[13px] md:text-base text-black leading-relaxed text-pretty">
+              <p className="text-[13px] md:text-base text-gray-800 dark:text-gray-200 leading-relaxed text-pretty">
                 Freshly graduated in <span className="text-red-500 font-bold bg-green-500/30 px-1 rounded">February 2025</span>, 
                 I specialize in engineering <span className="font-semibold">high-performance web interfaces</span> and securing robust IT infrastructure. 
               </p>
-              <p className="text-[13px] md:text-base text-black leading-relaxed">
+              <p className="text-[13px] md:text-base text-gray-800 dark:text-gray-200 leading-relaxed">
                 I am driven by a passion for solving complex problems and developing applications with real-world impact.
               </p>
               <div className="flex flex-wrap gap-2 pt-2">
@@ -110,7 +110,7 @@ const About = () => {
                 <button
                   type="button"
                   onClick={() => setActiveCert(degreeCertificate)}
-                  className="group flex w-full items-center gap-3 rounded-2xl border border-orange-500/15 bg-white/70 p-3 text-left shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-orange-500/40 hover:shadow-lg"
+                  className="group flex w-full items-center gap-3 rounded-2xl border border-orange-500/15 bg-white/70 dark:bg-gray-900/80 p-3 text-left shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-orange-500/40 hover:shadow-lg"
                 >
                   <img
                     src={degreeCertificate.img}
@@ -119,7 +119,7 @@ const About = () => {
                   />
                   <span className="min-w-0 flex-1">
                     <span className="mb-1 inline-flex rounded-full bg-orange-500/10 px-2 py-1 text-[8px] font-black uppercase tracking-[0.15em] text-orange-600">Academic credential</span>
-                    <span className="block text-sm font-black tracking-tight text-gray-900">BSc Computer Science</span>
+                    <span className="block text-sm font-black tracking-tight text-gray-900 dark:text-white">BSc Computer Science</span>
                     <span className="mt-1 block text-[10px] leading-relaxed text-gray-500">Hope Enterprise University College</span>
                   </span>
                   <span className="shrink-0 text-lg text-orange-500 transition-transform group-hover:translate-x-1" aria-hidden="true">↗</span>
@@ -139,7 +139,7 @@ const About = () => {
                         <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
                         QIYAS · Skills for Jobs
                       </span>
-                      <span className="block text-base font-black leading-tight tracking-tight text-gray-900 sm:text-lg">IT Infrastructure &amp; System Support</span>
+                      <span className="block text-base font-black leading-tight tracking-tight text-gray-900 dark:text-white sm:text-lg">IT Infrastructure &amp; System Support</span>
                       <span className="mt-1.5 block text-[10px] leading-relaxed text-gray-600">Practical training in Nifas Silk Lafto · World Bank-supported EASE project</span>
                     </span>
                     <span className="shrink-0 rounded-xl border border-emerald-500/20 bg-white/70 p-2 text-lg text-emerald-600 transition-transform group-hover:translate-x-0.5" aria-hidden="true">↗</span>
@@ -153,7 +153,7 @@ const About = () => {
                       'Biometrics',
                       'CCTV systems',
                     ].map((skill) => (
-                      <span key={skill} className="rounded-lg border border-emerald-500/15 bg-white/75 px-2 py-2 text-[9px] font-bold leading-tight text-gray-700 sm:text-[10px]">
+                      <span key={skill} className="rounded-lg border border-emerald-500/15 bg-white/75 dark:bg-gray-900/80 px-2 py-2 text-[9px] font-bold leading-tight text-gray-700 dark:text-gray-200 sm:text-[10px]">
                         {skill}
                       </span>
                     ))}
@@ -235,20 +235,20 @@ const About = () => {
         </div>
 
         <div className="relative group overflow-hidden">
-          <div className="glass-card flex flex-col md:flex-row border-l-4 border-l-emerald-500 bg-white dark:bg-white/5 transition-all duration-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+          <div className="glass-card flex flex-col md:flex-row border-l-4 border-l-emerald-500 bg-white dark:bg-gray-900/80 transition-all duration-500 hover:shadow-[0_0_30px_rgba(16,185,129,0.1)]">
             <div className="p-6 md:p-8 flex-grow space-y-2">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
                 <span className="text-[10px] font-mono font-bold text-emerald-500 uppercase tracking-[0.3em]">System.Resume_v2.0</span>
               </div>
-              <h3 className="text-2xl md:text-4xl font-black text-black uppercase tracking-tighter italic leading-none">
+              <h3 className="text-2xl md:text-4xl font-black text-gray-950 dark:text-white uppercase tracking-tighter italic leading-none">
                 BINIYAM <span className="text-green-500 border-b-2 border-emerald-500">GOSSA</span>
               </h3>
               <p className="text-[12px] md:text-sm text-gray-500 dark:text-gray-400 font-medium max-w-md">Updated In February 2026.</p>
             </div>
 
             <div className="flex flex-row md:flex-col border-t md:border-t-0 md:border-l border-black/5 dark:border-white/5">
-              <a href={CV} target="_blank" rel="noopener noreferrer" className="flex-1 md:w-48 flex bg-black/10 items-center justify-center gap-3 p-6 text-[10px] font-black uppercase tracking-widest text-black hover:bg-blue-500 hover:text-white transition-all duration-300">
+              <a href={CV} target="_blank" rel="noopener noreferrer" className="flex-1 md:w-48 flex bg-black/10 items-center justify-center gap-3 p-6 text-[10px] font-black uppercase tracking-widest text-gray-900 dark:text-white hover:bg-blue-500 hover:text-white transition-all duration-300">
                 <span className="text-red-500">01</span> Preview
               </a>
               <a href={CV} download="BINIYAM_GOSSA_KEBEDE_CV.pdf" className="flex-1 md:w-48 flex items-center justify-center gap-3 p-6 text-[10px] font-black uppercase tracking-widest bg-emerald-500 text-white hover:bg-emerald-600 transition-all duration-300 shadow-[inset_0_0_20px_rgba(0,0,0,0.1)]">
