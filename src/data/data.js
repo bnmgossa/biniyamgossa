@@ -111,14 +111,14 @@ export const certificateData = [
   },
   {
     id: 'infrastructure',
-    name: 'Infrastructure & Systems',
-    sub: 'Infrastructure Security Certificate',
+    name: 'QIYAS IT Infrastructure Training',
+    sub: 'Skills for Jobs (EASE) Project · World Bank-supported',
     color: 'border-emerald-500/20 text-emerald-500',
     img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85',
     btn: 'text-white',
     links: [
       {
-        label: 'Infrastructure Certificate Preview',
+        label: 'IT Infrastructure & System Support Training',
         type: 'image',
         target: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=90',
       },
