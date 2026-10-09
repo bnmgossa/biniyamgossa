@@ -14,8 +14,8 @@ function App() {
           <section id="home"><Hero /></section>
           <About />
           <ProjectShowcase />
-          <section id="skills"><Skills /></section>
-          <section id="contact"><Contact /></section>
+          <Skills />
+          <Contact />
         </main>
     </div>
   );
