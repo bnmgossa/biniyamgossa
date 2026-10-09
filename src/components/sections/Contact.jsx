@@ -1,4 +1,3 @@
-import React from "react";
 import { Github, Linkedin, Mail, Send, ArrowUpRight } from "lucide-react";
 
 const socials = [
