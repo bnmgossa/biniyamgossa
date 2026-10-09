@@ -2,6 +2,8 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
+  const isTrainingProgram = cert.id === 'infrastructure';
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 18 }}
@@ -107,7 +109,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                   text-emerald-600 dark:text-emerald-400
                 "
               >
-                Verified
+                {isTrainingProgram ? 'Training Program' : 'Verified'}
               </span>
             </div>
           </div>
@@ -178,21 +180,29 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                   "
                 >
                   <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                  Verified Issuer
+                  {isTrainingProgram ? 'Program Overview' : 'Verified Issuer'}
                 </span>
               </div>
 
               <div className="space-y-2 sm:space-y-3">
                 <h4 className="text-black dark:text-white text-base sm:text-lg font-bold tracking-tight">
-                  Credentials Overview
+                  {isTrainingProgram ? 'Training Overview' : 'Credentials Overview'}
                 </h4>
                 <p className="text-xs sm:text-sm leading-relaxed text-neutral-700 dark:text-neutral-300">
-                  This archive stores official certificates, validated learning
-                  achievements, and specialized program credentials acquired
-                  through{" "}
-                  <span className="font-bold text-blue-600 dark:text-blue-400">
-                    {cert.sub}
-                  </span>.
+{isTrainingProgram ? (
+                    <>
+                      Practical IT infrastructure and system support training covering networking, device maintenance, server systems, biometrics, and CCTV in Nifas Silk Lafto.
+                    </>
+                  ) : (
+                    <>
+                      This archive stores official certificates, validated learning
+                      achievements, and specialized program credentials acquired
+                      through{" "}
+                      <span className="font-bold text-blue-600 dark:text-blue-400">
+                        {cert.sub}
+                      </span>.
+                    </>
+                  )}
                 </p>
               </div>
 
@@ -222,17 +232,17 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                   "
                 >
                   <div className="text-xl sm:text-2xl font-black text-emerald-500">
-                    100%
+                    {isTrainingProgram ? '5' : '100%'}
                   </div>
                   <div className="text-[9px] sm:text-xs uppercase tracking-wide text-neutral-500 mt-0.5 font-medium">
-                    Verified
+                    {isTrainingProgram ? 'Skill areas' : 'Verified'}
                   </div>
                 </div>
               </div>
 
               <div className="pt-4 border-t border-black/5 dark:border-white/10 max-sm:hidden">
                 <p className="text-[10px] sm:text-[11px] uppercase tracking-[0.15em] text-neutral-500 font-mono">
-                  Additional certifications coming soon...
+                  {isTrainingProgram ? 'Training focus: infrastructure & system support' : 'Additional certifications coming soon...'}
                 </p>
               </div>
             </div>
@@ -379,7 +389,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                         {asset.label}
                       </h4>
                       <div className="px-3 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase">
-                        Verified
+                        {isTrainingProgram ? 'Illustrative visual' : 'Verified'}
                       </div>
                     </div>
 
