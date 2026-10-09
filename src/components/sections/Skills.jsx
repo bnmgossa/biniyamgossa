@@ -1,4 +1,3 @@
-import React from "react";
 import { Code2, Network, Wrench } from "lucide-react";
 
 const categories = [
