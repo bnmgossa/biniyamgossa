@@ -97,14 +97,12 @@ export const certificateData = [
         links: [
           { label: 'Graduation Cert', type: 'image', target: udacity },
           { label: 'Verify Credential Hash ID', type: 'link', target: 'https://udacity.com/certificate/e/9a18a302-40a7-11f0-b0ae-9fd8a7dc9473' },
-          { label: 'Core Syllabus Matrix', type: 'link', target: 'https://udacity.com/syllabus' },
         ],
       },
       {
         title: 'AI Fundamentals',
         links: [
           { label: 'AI Certificate', type: 'image', target: udacityai },
-          { label: 'Project Registry: Portfolio Hub', type: 'link', target: 'https://udacity.com/certificate/e/9a18a302-40a7-11f0-b0ae-9fd8a7dc9473' },
         ],
       },
     ],
