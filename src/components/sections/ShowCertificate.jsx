@@ -60,8 +60,8 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
               "
             >
               <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" />
-              <span className="max-sm:hidden">VERIFIED_SECURITY_REGISTRY</span>
-              <span className="sm:hidden">REGISTRY</span>
+              <span className="max-sm:hidden">PORTFOLIO_CREDENTIALS</span>
+              <span className="sm:hidden">CREDENTIALS</span>
             </div>
 
             <h3
@@ -109,7 +109,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                   text-emerald-600 dark:text-emerald-400
                 "
               >
-                {isTrainingProgram ? 'Training Program' : 'Verified'}
+                {isTrainingProgram ? 'Training Program' : 'Credential Record'}
               </span>
             </div>
           </div>
@@ -180,7 +180,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                   "
                 >
                   <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
-                  {isTrainingProgram ? 'Program Overview' : 'Verified Issuer'}
+                  {isTrainingProgram ? 'Program Overview' : 'Credential Details'}
                 </span>
               </div>
 
@@ -232,10 +232,10 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                   "
                 >
                   <div className="text-xl sm:text-2xl font-black text-emerald-500">
-                    {isTrainingProgram ? '5' : '100%'}
+                    {isTrainingProgram ? '5' : '1'}
                   </div>
                   <div className="text-[9px] sm:text-xs uppercase tracking-wide text-neutral-500 mt-0.5 font-medium">
-                    {isTrainingProgram ? 'Skill areas' : 'Verified'}
+                    {isTrainingProgram ? 'Skill areas' : 'Attachments'}
                   </div>
                 </div>
               </div>
@@ -389,7 +389,7 @@ const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
                         {asset.label}
                       </h4>
                       <div className="px-3 py-0.5 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-600 dark:text-emerald-400 text-[10px] font-bold uppercase">
-                        {isTrainingProgram ? 'Illustrative visual' : 'Verified'}
+                        {isTrainingProgram ? 'Illustrative visual' : 'Document preview'}
                       </div>
                     </div>
 
