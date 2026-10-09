@@ -1,4 +1,3 @@
-import React from "react";
 import { Home, UserRound, Zap, BriefcaseBusiness, Mail, FileText } from "lucide-react";
 import logoImg from "../../../public/logo.png";
 import resume from "../../assets/BINIYAM_GOSSA_KEBEDE.pdf";
