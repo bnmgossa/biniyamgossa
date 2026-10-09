@@ -105,16 +105,24 @@ const About = () => {
               </span>
             </div>
 
-            <div className="grid grid-cols-2 gap-2 border-b border-black/10 py-3">
+            <div className="space-y-3 border-b border-black/10 py-3">
               {degreeCertificate && (
                 <button
                   type="button"
                   onClick={() => setActiveCert(degreeCertificate)}
-                  className="group overflow-hidden rounded-sm border border-orange-500/25 bg-orange-500/5 p-2 text-left"
+                  className="group flex w-full items-center gap-3 rounded-2xl border border-orange-500/15 bg-white/70 p-3 text-left shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-orange-500/40 hover:shadow-lg"
                 >
-                  <img src={degreeCertificate.img} alt="BSc degree certificate" className="mb-2 aspect-[4/3] w-full object-cover object-top transition-transform duration-300 group-hover:scale-105" />
-                  <span className="block text-[9px] font-black uppercase tracking-wide text-black">BSc Degree</span>
-                  <span className="mt-1 block text-[8px] uppercase tracking-wider text-gray-500">Academic</span>
+                  <img
+                    src={degreeCertificate.img}
+                    alt="BSc degree certificate"
+                    className="h-16 w-16 shrink-0 rounded-xl border border-orange-500/15 object-cover object-top sm:h-20 sm:w-20"
+                  />
+                  <span className="min-w-0 flex-1">
+                    <span className="mb-1 inline-flex rounded-full bg-orange-500/10 px-2 py-1 text-[8px] font-black uppercase tracking-[0.15em] text-orange-600">Academic credential</span>
+                    <span className="block text-sm font-black tracking-tight text-gray-900">BSc Computer Science</span>
+                    <span className="mt-1 block text-[10px] leading-relaxed text-gray-500">Hope Enterprise University College</span>
+                  </span>
+                  <span className="shrink-0 text-lg text-orange-500 transition-transform group-hover:translate-x-1" aria-hidden="true">↗</span>
                 </button>
               )}
 
@@ -122,11 +130,38 @@ const About = () => {
                 <button
                   type="button"
                   onClick={() => setActiveCert(infrastructureCertificate)}
-                  className="group overflow-hidden rounded-sm border border-emerald-500/25 bg-emerald-500/5 p-2 text-left"
+                  className="group relative w-full overflow-hidden rounded-2xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/10 via-cyan-500/5 to-white/70 p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-500/50 hover:shadow-xl"
                 >
-                  <img src={infrastructureCertificate.img} alt="Infrastructure and systems certificate preview" className="mb-2 aspect-[4/3] w-full object-cover transition-transform duration-300 group-hover:scale-105" />
-                  <span className="block text-[9px] font-black uppercase tracking-wide text-black">Infrastructure</span>
-                  <span className="mt-1 block text-[8px] uppercase tracking-wider text-gray-500">Specialist</span>
+                  <span className="pointer-events-none absolute -right-8 -top-10 h-28 w-28 rounded-full bg-emerald-400/20 blur-3xl transition-all duration-500 group-hover:bg-emerald-400/35" />
+                  <span className="relative flex items-start justify-between gap-3">
+                    <span className="min-w-0">
+                      <span className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-[8px] font-black uppercase tracking-[0.12em] text-emerald-700">
+                        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                        QIYAS · Skills for Jobs
+                      </span>
+                      <span className="block text-base font-black leading-tight tracking-tight text-gray-900 sm:text-lg">IT Infrastructure &amp; System Support</span>
+                      <span className="mt-1.5 block text-[10px] leading-relaxed text-gray-600">Practical training in Nifas Silk Lafto · World Bank-supported EASE project</span>
+                    </span>
+                    <span className="shrink-0 rounded-xl border border-emerald-500/20 bg-white/70 p-2 text-lg text-emerald-600 transition-transform group-hover:translate-x-0.5" aria-hidden="true">↗</span>
+                  </span>
+
+                  <span className="relative mt-4 grid grid-cols-2 gap-2 sm:grid-cols-3">
+                    {[
+                      'Networking',
+                      'Device maintenance',
+                      'Server systems',
+                      'Biometrics',
+                      'CCTV systems',
+                    ].map((skill) => (
+                      <span key={skill} className="rounded-lg border border-emerald-500/15 bg-white/75 px-2 py-2 text-[9px] font-bold leading-tight text-gray-700 sm:text-[10px]">
+                        {skill}
+                      </span>
+                    ))}
+                  </span>
+                  <span className="relative mt-3 flex items-center justify-between border-t border-emerald-500/15 pt-3 text-[9px] font-black uppercase tracking-[0.16em] text-emerald-700">
+                    Explore training
+                    <span className="transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+                  </span>
                 </button>
               )}
             </div>
