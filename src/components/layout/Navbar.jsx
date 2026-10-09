@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Home, UserRound, Zap, BriefcaseBusiness, Mail, FileText, Sun, Moon } from "lucide-react";
-import logoImg from "../../../public/xbiniyam-mark.svg";
 import resume from "../../assets/BINIYAM_GOSSA_KEBEDE.pdf";
 
 const navLinks = [
@@ -26,7 +25,7 @@ const Navbar = () => {
   return (
     <>
       <a href="#home" aria-label="Xbiniyam portfolio home" className="fixed left-4 top-4 z-[100] inline-flex items-center gap-2 rounded-xl border border-white/30 bg-white/85 px-3 py-2 shadow-lg backdrop-blur-xl transition hover:-translate-y-0.5 dark:border-white/10 dark:bg-gray-950/80 sm:left-6 sm:top-5">
-        <img src={logoImg} alt="" className="h-7 w-7 rounded-md object-contain" />
+        <img src="/xbiniyam-mark.svg" alt="" className="h-7 w-7 rounded-md object-contain" />
         <span className="text-sm font-black tracking-tight text-gray-950 dark:text-white">X<span className="text-emerald-500">biniyam</span></span>
       </a>
 
