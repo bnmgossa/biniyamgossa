@@ -10,13 +10,12 @@ function App() {
   return (
     <div className="min-h-screen bg-transparent scroll-smooth transition-colors duration-500">
         <Navbar />
-        <main className="max-w-5xl mx-auto px-6 pt-32 space-y-24 ">
+        <main id="main-content" className="mx-auto max-w-6xl space-y-20 px-4 pb-28 pt-24 sm:px-6 sm:pt-28 lg:px-8">
           <section id="home"><Hero /></section>
-          <section id="about" ><About /></section>
+          <About />
           <ProjectShowcase />
           <section id="skills"><Skills /></section>
           <section id="contact"><Contact /></section>
-          <div className="h-[20vh] pointer-events-none" />
         </main>
     </div>
   );
