@@ -40,10 +40,10 @@ export const itProjects = [
   //   video: googleDriveVideo('VIDEO_FILE_ID'),
   // },
   {
-    title: 'Switch 2960 vlan config',
+    title: 'Cisco Catalyst 2960 VLAN Lab',
     category: 'it',
-    description: 'Project documentation and technical details.',
-    tags: ['IT', 'Documentation', 'Systems', 'switch'],
+    description: 'Hands-on Cisco switching lab covering VLAN configuration and switch management. The demo video shows the configuration process.',
+    tags: ['Cisco IOS', 'VLANs', 'Switching', 'VTP'],
     link: "",
     image: '',
     video:  googleDriveVideo('https://drive.google.com/file/d/1pjoAniAvJbD6AQxx__6BYUJncN_n6x3t/view?usp=drivesdk'),
