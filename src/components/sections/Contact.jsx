@@ -1,129 +1,80 @@
-import React from 'react';
+import React from "react";
+import { Github, Linkedin, Mail, Send, ArrowUpRight } from "lucide-react";
 
-const Contact = () => {
-  const socials = [
-    { 
-      name: 'LinkedIn', 
-      link: 'https://linkedin.com/in/biniyamgossa',
-      username: 'biniyamgossa',
-      img: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png',
-      shadow: 'shadow-md shadow-blue-500',
-      hoverShadow: 'hover:shadow-sky-500/40',
-      border: 'hover:border-sky-500/50'
-    },
-    { 
-      name: 'Email', 
-      link: 'mailto:bnmgigo@gmail.com',
-      username: 'bnmgigo@gmail.com',
-      img: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Gmail_icon_%282020%29.svg',
-      shadow: 'shadow-[box-shadow:-15px_10px_30px_-10px_rgba(59,130,246,0.5),0px_10px_30px_-10px_rgba(239,68,68,0.5),15px_10px_30px_-10px_rgba(234,179,8,0.5),30px_10px_30px_-10px_rgba(34,197,94,0.5)]',
-      hoverShadow: 'hover:shadow-sky-500/40',
-      border: 'hover:border-sky-500/50'
-    },
-    { 
-      name: 'Telegram', 
-      link: 'https://t.me/bnmgigo',
-      username: '@bnmgigo',
-      img: 'https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg',
-      shadow: 'shadow-md shadow-sky-500',
-      hoverShadow: 'hover:shadow-blue-500',
-      border: 'hover:border-sky-500/50'
-    },
-    { 
-      name: 'Instagram', 
-      link: 'https://instagram.com/bnmgigo',
-      username: '@bnmgigo',
-      img: 'https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png',
-      shadow: 'shadow-md shadow-red-500',
-      hoverShadow: 'hover:shadow-pink-500/40',
-      border: 'hover:border-pink-500/50'
-    },
-    { 
-      name: 'TikTok', 
-      link: 'https://tiktok.com/@bnmgigo',
-      username: '@bnmgigo',
-      img: 'https://upload.wikimedia.org/wikipedia/commons/3/34/Ionicons_logo-tiktok.svg',
-      shadow: 'shadow-md shadow-black',
-      hoverShadow: 'hover:shadow-blue-600/40',
-      border: 'hover:border-blue-600/50'
-    },
-    { 
-      name: 'Facebook', 
-      link: 'https://facebook.com/biniyamgossa',
-      username: 'biniyam gossa',
-      img: 'https://upload.wikimedia.org/wikipedia/commons/0/05/Facebook_Logo_%282019%29.png',
-      shadow: 'shadow-md shadow-sky-800',
-      hoverShadow: 'hover:shadow-blue-600/40',
-      border: 'hover:border-blue-600/50'
-    },
-  ];
+const socials = [
+  {
+    name: "LinkedIn",
+    detail: "Professional profile",
+    link: "https://linkedin.com/in/biniyamgossa",
+    Icon: Linkedin,
+    accent: "hover:border-blue-500/40 hover:bg-blue-500/5",
+  },
+  {
+    name: "GitHub",
+    detail: "Code and repositories",
+    link: "https://github.com/bnmgossa",
+    Icon: Github,
+    accent: "hover:border-gray-500/40 hover:bg-gray-500/5",
+  },
+  {
+    name: "Email",
+    detail: "bnmgigo@gmail.com",
+    link: "mailto:bnmgigo@gmail.com",
+    Icon: Mail,
+    accent: "hover:border-emerald-500/40 hover:bg-emerald-500/5",
+  },
+  {
+    name: "Telegram",
+    detail: "@bnmgigo",
+    link: "https://t.me/bnmgigo",
+    Icon: Send,
+    accent: "hover:border-sky-500/40 hover:bg-sky-500/5",
+  },
+];
 
-  return (
-    <div className=" bg-black/10 rounded-t-2xl -mt-16 pt-10">
-      <section id="contact" className="px-4 md:px-8 max-w-6xl mx-auto">
-
-        {/* Header */}
-        <div className="flex items-center gap-4 mb-10">
-          <h2 className="text-xs md:text-sm font-black uppercase tracking-[0.4em] text-gray-500 dark:text-gray-400 italic whitespace-nowrap">
-            04. Let’s Connect
-          </h2>
-          <div className="flex-grow h-px bg-gradient-to-r from-red-500 via-black to-transparent  " />
-        </div>
-
-        {/* ✅ Grid back to 2 columns on small screens */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
-          {socials.map((social) => (
-            <a 
-              key={social.name}
-              href={social.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className={`group relative flex items-center gap-3 md:gap-4 p-4 md:p-5
-                          bg-white dark:bg-white/5
-                          border border-white/10
-                          rounded-2xl
-                          backdrop-blur-md   /* ✅ strong bg on small too */
-                          transition-all duration-300
-                          hover:-translate-y-1
-                          ${social.shadow} ${social.hoverShadow} ${social.border}`}
-            >
-              {/* subtle gradient overlay */}
-              <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition duration-500 bg-gradient-to-br from-white/10 to-transparent pointer-events-none" />
-
-              <img 
-                src={social.img}
-                alt={social.name}
-                className="w-8 h-8 md:w-10 md:h-10 object-contain transition-transform duration-300 group-hover:scale-110"
-              />
-
-              <div className="flex flex-col">
-                <p className="text-gray-900 dark:text-white font-bold text-xs md:text-sm uppercase tracking-wider">
-                  {social.name}
-                </p>
-                <span className="text-[10px] md:text-xs text-gray-500 font-mono mt-1 truncate">
-                  {social.username}
-                </span>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        {/* Bottom */}
-        <div className="pt-10 pb-8 text-center">
-          <div className="h-[1px] w-full bg-gradient-to-r from-red-500 via-black  to-transparent mb-6" />
-          
-          <p className="text-xs tracking-[0.3em] text-gray-500 dark:text-gray-600 font-semibold uppercase">
-            © {new Date().getFullYear()} Biniyam Gossa
-          </p>
-
-          <p className="text-[10px] text-gray-400 mt-2 tracking-wide">
-            Built with React & Tailwind • Designed with Precision
+const Contact = () => (
+  <section id="contact" className="scroll-mt-24 rounded-3xl border border-gray-200 bg-white/70 px-4 py-8 dark:border-white/10 dark:bg-white/[0.035] sm:px-8 sm:py-10">
+    <div className="mx-auto max-w-5xl">
+      <p className="text-xs font-black uppercase tracking-[0.2em] text-emerald-600 dark:text-emerald-400">05 · Contact</p>
+      <div className="mt-3 grid gap-6 md:grid-cols-[minmax(0,1fr)_minmax(240px,0.7fr)] md:items-end">
+        <div>
+          <h2 className="text-3xl font-black tracking-tight text-gray-950 dark:text-white sm:text-4xl">Let’s build something useful.</h2>
+          <p className="mt-3 max-w-xl text-sm leading-7 text-gray-600 dark:text-gray-300 sm:text-base">
+            I’m open to junior opportunities, internships, and collaborative projects in frontend development, networking, and IT support. If my background fits your team, I’d be glad to connect.
           </p>
         </div>
+        <a href="mailto:bnmgigo@gmail.com" className="inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 text-sm font-bold text-white shadow-lg shadow-emerald-500/20 transition hover:-translate-y-0.5 hover:bg-emerald-600 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 focus-visible:ring-offset-2">
+          Get in touch <ArrowUpRight size={17} aria-hidden="true" />
+        </a>
+      </div>
 
-      </section>
+      <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
+        {socials.map(({ name, detail, link, Icon, accent }) => (
+          <a
+            key={name}
+            href={link}
+            target={name === "Email" ? undefined : "_blank"}
+            rel={name === "Email" ? undefined : "noopener noreferrer"}
+            className={`group flex min-w-0 items-center gap-3 rounded-2xl border border-gray-200 bg-white p-4 transition duration-300 hover:-translate-y-0.5 hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500 dark:border-white/10 dark:bg-white/[0.03] ${accent}`}
+          >
+            <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gray-100 text-gray-700 dark:bg-white/10 dark:text-gray-200">
+              <Icon size={19} aria-hidden="true" />
+            </span>
+            <span className="min-w-0 flex-1">
+              <span className="block text-sm font-bold text-gray-900 dark:text-white">{name}</span>
+              <span className="mt-1 block truncate text-[11px] text-gray-500 dark:text-gray-400">{detail}</span>
+            </span>
+            <ArrowUpRight size={15} className="shrink-0 text-gray-400 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+          </a>
+        ))}
+      </div>
+
+      <div className="mt-8 flex flex-col gap-2 border-t border-gray-200 pt-5 text-xs text-gray-500 dark:border-white/10 dark:text-gray-400 sm:flex-row sm:items-center sm:justify-between">
+        <p>© {new Date().getFullYear()} Biniyam Gossa. All rights reserved.</p>
+        <p>Built with React · Tailwind CSS · Vite</p>
+      </div>
     </div>
-  );
-};
+  </section>
+);
 
 export default Contact;
