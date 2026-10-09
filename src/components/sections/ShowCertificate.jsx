@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "framer-motion";
 
 const ShowCertificate = ({ cert, onBack, onPreviewImage }) => {
