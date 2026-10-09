@@ -85,7 +85,7 @@ const ProjectShowcase = () => {
             03. Showcase
           </p>
 
-          <h2 className="mt-1 text-2xl font-black uppercase tracking-tighter text-gray-900 md:text-4xl">
+          <h2 className="mt-1 text-2xl font-black uppercase tracking-tighter text-gray-900 dark:text-white md:text-4xl">
             Work in{' '}
             <span className="text-blue-500">
               motion
@@ -127,7 +127,7 @@ const ProjectShowcase = () => {
                   ${
                     isActive
                       ? group.activeClass
-                      : 'border-transparent text-gray-500 hover:bg-white hover:text-gray-900'
+                      : 'border-transparent text-gray-500 hover:bg-white hover:text-gray-900 dark:hover:bg-gray-800 dark:hover:text-white'
                   }
                 `}
               >
@@ -247,7 +247,7 @@ const ProjectShowcase = () => {
                 rounded-2xl
                 border
                 border-black/10
-                bg-white
+                bg-white dark:bg-gray-900
                 shadow-[0_6px_25px_rgba(0,0,0,0.06)]
                 transition-all
                 duration-300
@@ -568,7 +568,7 @@ const ProjectShowcase = () => {
                       Featured project
                     </p>
 
-                    <h3 className="mt-1 text-md font-black leading-tight tracking-tight text-gray-900">
+                    <h3 className="mt-1 text-md font-black leading-tight tracking-tight text-gray-900 dark:text-white">
                       {project.title}
                     </h3>
                   </div>
