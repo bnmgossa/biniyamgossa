@@ -142,8 +142,13 @@ const About = () => {
                   className="group relative w-full overflow-hidden rounded-2xl border border-emerald-300/70 bg-gradient-to-br from-emerald-50 via-white to-cyan-50 p-3 text-left transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-400 hover:shadow-xl hover:shadow-emerald-900/10 dark:border-emerald-400/20 dark:from-emerald-400/[0.08] dark:via-slate-900 dark:to-cyan-400/[0.06] sm:p-4"
                 >
                   <span className="absolute right-0 top-0 rounded-bl-xl bg-emerald-600 px-3 py-1.5 text-[8px] font-black uppercase tracking-[0.18em] text-white">Featured training</span>
-                  <span className="mb-3 mt-5 block overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-inner dark:border-white/10">
-                    <img src={infrastructureCertificate.img} alt="QIYAS IT Infrastructure and System Support training certificate" className="h-36 w-full object-contain transition-transform duration-500 group-hover:scale-[1.025] sm:h-44" loading="lazy" />
+                  <span className="relative mb-3 mt-5 block aspect-[16/9] overflow-hidden rounded-xl border border-slate-200 bg-white p-2 shadow-inner dark:border-white/10">
+                    <img
+                      src={infrastructureCertificate.img}
+                      alt="QIYAS IT Infrastructure and System Support training certificate, displayed horizontally"
+                      className="absolute left-1/2 top-1/2 h-[140%] w-auto max-w-none -translate-x-1/2 -translate-y-1/2 rotate-90 object-contain transition-transform duration-500 group-hover:scale-[1.025]"
+                      loading="lazy"
+                    />
                   </span>
                   <span className="flex items-start justify-between gap-3">
                     <span className="min-w-0">
