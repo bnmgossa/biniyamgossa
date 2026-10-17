@@ -1,5 +1,6 @@
 import hammer from '../assets/images/projects/hamer.png';
 import legal from '../assets/certificates/legal.jpg';
+import itCertificate from '../assets/certificates/IT.jpeg';
 import udacity from '../assets/certificates/udacityprograming.png';
 import udacityai from '../assets/certificates/udacityaifundamentals.png';
 
@@ -112,13 +113,13 @@ export const certificateData = [
     name: 'QIYAS IT Infrastructure Training',
     sub: 'Skills for Jobs (EASE) Project · World Bank-supported',
     color: 'border-emerald-500/20 text-emerald-500',
-    img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=85',
+    img: itCertificate,
     btn: 'text-white',
     links: [
       {
         label: 'IT Infrastructure & System Support Training',
         type: 'image',
-        target: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1600&q=90',
+        target: itCertificate,
       },
     ],
   },
