@@ -115,7 +115,7 @@ const About = () => {
                   <img
                     src={degreeCertificate.img}
                     alt="BSc degree certificate"
-                    className="h-16 w-16 shrink-0 rounded-xl border border-orange-500/15 object-cover object-top sm:h-20 sm:w-20"
+                    className="h-20 w-24 shrink-0 rounded-xl border border-orange-500/20 bg-white p-1 object-contain sm:h-24 sm:w-28"
                   />
                   <span className="min-w-0 flex-1">
                     <span className="mb-1 inline-flex rounded-full bg-orange-500/10 px-2 py-1 text-[8px] font-black uppercase tracking-[0.15em] text-orange-600">Academic credential</span>
@@ -133,6 +133,17 @@ const About = () => {
                   className="group relative w-full overflow-hidden rounded-2xl border border-emerald-500/25 bg-gradient-to-br from-emerald-500/10 via-cyan-500/5 to-white/70 p-4 text-left shadow-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-emerald-500/50 hover:shadow-xl"
                 >
                   <span className="pointer-events-none absolute -right-8 -top-10 h-28 w-28 rounded-full bg-emerald-400/20 blur-3xl transition-all duration-500 group-hover:bg-emerald-400/35" />
+                  <span className="relative mb-3 block overflow-hidden rounded-xl border border-emerald-500/20 bg-white p-2 shadow-inner">
+                    <img
+                      src={infrastructureCertificate.img}
+                      alt="QIYAS IT Infrastructure and System Support training certificate"
+                      className="h-36 w-full object-contain transition-transform duration-300 group-hover:scale-[1.02] sm:h-44"
+                      loading="lazy"
+                    />
+                    <span className="absolute bottom-3 right-3 rounded-full bg-slate-950/80 px-3 py-1.5 text-[9px] font-bold uppercase tracking-wider text-white shadow-lg">
+                      View certificate ↗
+                    </span>
+                  </span>
                   <span className="relative flex items-start justify-between gap-3">
                     <span className="min-w-0">
                       <span className="mb-2 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/20 bg-emerald-500/10 px-2.5 py-1 text-[8px] font-black uppercase tracking-[0.12em] text-emerald-700">
