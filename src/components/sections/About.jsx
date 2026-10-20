@@ -147,7 +147,7 @@ const About = () => {
                       src={infrastructureCertificate.img}
                       alt="QIYAS IT Infrastructure and System Support training certificate, displayed horizontally"
                       className="absolute left-1/2 top-1/2 max-w-none object-contain transition-transform duration-500 group-hover:scale-[1.025]"
-                      style={{ height: 'min(140%, 420px)', width: 'auto', transform: 'translate(-50%, -50%) rotate(90deg)' }}
+                      style={{ height: 'min(140%, 420px)', width: 'auto', transform: 'translate(-50%, -50%) rotate(-90deg)' }}
                       loading="lazy"
                     />
                   </span>
